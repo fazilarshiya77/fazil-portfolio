@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import type { Project } from '../data/projects';
 import { ArrowUpRight, Eye, ShieldCheck, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SparkleStar } from './SparkleStar';
 
 interface ProjectCardProps {
   project: Project;
@@ -41,7 +42,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
         <div 
           className="pointer-events-none absolute -inset-px transition-opacity duration-300 rounded-2xl opacity-100"
           style={{
-            background: `radial-gradient(550px circle at ${mousePos.x}px ${mousePos.y}px, rgba(224, 83, 44, 0.08), transparent 70%)`,
+            background: `radial-gradient(550px circle at ${mousePos.x}px ${mousePos.y}px, rgba(117, 98, 224, 0.12), transparent 70%)`,
           }}
           aria-hidden="true"
         />
@@ -84,6 +85,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
               <span className="font-bold text-[var(--accent-primary)]">{project.number}</span>
               <span>/</span>
               <span className="font-semibold text-[var(--text-secondary)]">{project.category}</span>
+              <SparkleStar size={14} className="text-[#B8B0EA] ml-1" />
             </div>
             <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold">
               <ShieldCheck className="w-3.5 h-3.5" />

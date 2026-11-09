@@ -30,12 +30,12 @@ export interface Project {
 }
 
 :root {
-  /* Warm Editorial Studio Colors (No blue, no stark white) */
-  --bg-primary: #F5F2EB;     /* Natural Linen */
-  --bg-surface: #FAF8F5;     /* Cashmere Cream */
-  --accent-primary: #E0532C; /* Sunset Terracotta */
-  --accent-emerald: #16A34A; /* Forest Green */
-  --text-primary: #1C1917;   /* Carbon Espresso */
+  /* Dreamy Lavender & Soft Peach Studio Theme */
+  --card-lavender: #B8B0EA;  /* Dreamy Lilac */
+  --card-peach: #F8D8C8;     /* Soft Peachy Apricot */
+  --accent-primary: #7562E0; /* Signature Lilac Violet */
+  --text-primary: #232035;   /* Deep Charcoal Violet */
+  --font-signature: 'Caveat', cursive;
 }`,
     webhook: `// Serverless WhatsApp Lead Dispatch Webhook
 export async function dispatchLeadNotification(lead: AdminLead) {

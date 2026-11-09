@@ -22,9 +22,10 @@ export const ScrollProgress: React.FC = () => {
       aria-hidden="true"
     >
       <div 
-        className="h-full bg-gradient-to-r from-[var(--accent-primary)] to-emerald-400 transition-all duration-75 ease-out"
+        className="h-full bg-gradient-to-r from-[var(--accent-primary)] via-[#B8B0EA] to-[#F8D8C8] transition-all duration-75 ease-out"
         style={{ width: `${scrollProgress}%` }}
       />
     </div>
   );
 };
+

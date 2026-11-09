@@ -6,70 +6,92 @@
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --font-signature: 'Caveat', cursive, sans-serif;
 }
 
 :root {
   color-scheme: light;
   
-  /* Warm Editorial & Studio Palette (No blue, no stark sterile white) */
-  --bg-primary: #F5F2EB;           /* Warm Sand / Natural Linen */
-  --bg-secondary: #EBE6DC;         /* Soft Clay / Warm Stone */
-  --bg-surface: #FAF8F5;           /* Warm Cashmere Cream */
-  --bg-surface-elevated: #FFFDF9;  /* Elevated Warm Surface */
+  /* Reference Aesthetic: Dreamy Lavender & Soft Peach Studio */
+  --bg-primary: #F3F0FA;           /* Soft Muted Lavender-Grey Canvas */
+  --bg-secondary: #E9E4F5;         /* Secondary Canvas */
+  --bg-surface: #FFFFFF;           /* Crisp Card Surface */
+  --bg-surface-elevated: #FFFFFF;
+  
+  /* Alternating Card Tones from Reference */
+  --card-lavender: #B8B0EA;        /* Main Dreamy Lilac / Lavender */
+  --card-lavender-subtle: #ECE8FA; /* Soft Light Lavender */
+  --card-lavender-text: #232035;   /* Deep Charcoal Violet Text on Lavender */
+  
+  --card-peach: #F8D8C8;           /* Main Soft Peachy Apricot */
+  --card-peach-subtle: #FDF1EA;    /* Soft Light Peach */
+  --card-peach-text: #2D2320;      /* Deep Warm Text on Peach */
   
   /* Accents */
-  --accent-primary: #E0532C;       /* Terracotta Flame / Sunset Amber */
-  --accent-primary-hover: #C9431D;
-  --accent-primary-soft: rgba(224, 83, 44, 0.1);
-  --accent-gold: #D97706;          /* Warm Gold */
-  --accent-emerald: #16A34A;       /* Fresh Forest Green (Status) */
-  --accent-emerald-soft: rgba(22, 163, 74, 0.12);
+  --accent-primary: #7562E0;       /* Signature Lilac Violet */
+  --accent-primary-hover: #634FD0;
+  --accent-primary-soft: rgba(117, 98, 224, 0.12);
+  --accent-coral: #E87252;         /* Warm Peach / Coral Accent */
+  --accent-gold: #E5A83B;          /* Sparkle Gold */
+  --accent-emerald: #10B981;       /* Live Status */
+  --accent-emerald-soft: rgba(16, 185, 129, 0.12);
 
   /* Typography */
-  --text-primary: #1C1917;         /* Deep Warm Espresso Carbon (Stone 900) */
-  --text-secondary: #57534E;       /* Warm Charcoal Stone (Stone 600) */
-  --text-muted: #8C867E;           /* Muted Warm Ash (Stone 400) */
+  --text-primary: #232035;         /* Deep Plum / Charcoal Violet */
+  --text-secondary: #5F5975;       /* Muted Plum Slate */
+  --text-muted: #8F88A6;           /* Soft Violet Ash */
   
   /* Borders */
-  --border-color: #DDD7CC;         /* Warm Stone Border */
-  --border-subtle: #E8E3D8;
-  --border-focus: rgba(224, 83, 44, 0.4);
+  --border-color: #DDD6F0;         /* Soft Lilac Divider */
+  --border-subtle: #EBE5F7;
+  --border-peach: #F0D0C0;
+  --border-focus: rgba(117, 98, 224, 0.45);
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(44, 38, 33, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(44, 38, 33, 0.06), 0 2px 4px -2px rgba(44, 38, 33, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(44, 38, 33, 0.08), 0 4px 6px -4px rgba(44, 38, 33, 0.04);
-  --shadow-glow: 0 0 30px -5px rgba(224, 83, 44, 0.2);
+  --shadow-sm: 0 2px 4px 0 rgba(35, 32, 53, 0.04);
+  --shadow-md: 0 6px 12px -2px rgba(35, 32, 53, 0.08), 0 3px 6px -2px rgba(35, 32, 53, 0.04);
+  --shadow-lg: 0 14px 28px -4px rgba(35, 32, 53, 0.1), 0 6px 12px -4px rgba(35, 32, 53, 0.05);
+  --shadow-card: 0 20px 40px -10px rgba(78, 64, 150, 0.15);
 }
 
 .dark {
   color-scheme: dark;
   
-  /* Warm Dark Obsidian Palette (No blue slate, rich warm obsidian & flame) */
-  --bg-primary: #121110;           /* Deep Obsidian Charcoal */
-  --bg-secondary: #1A1816;         /* Deep Warm Dark Cocoa */
-  --bg-surface: #1F1C1A;           /* Warm Dark Stone */
-  --bg-surface-elevated: #282522;  /* Elevated Warm Surface */
+  /* Dark Mode: Deep Midnight Plum & Electric Lilac */
+  --bg-primary: #151320;           /* Deep Midnight Plum Canvas */
+  --bg-secondary: #1C192C;         /* Secondary Canvas */
+  --bg-surface: #221E35;           /* Elevated Plum Surface */
+  --bg-surface-elevated: #2A2542;
   
-  --accent-primary: #FF6B4A;       /* Vivid Sunset Flame */
-  --accent-primary-hover: #FF856A;
-  --accent-primary-soft: rgba(255, 107, 74, 0.16);
-  --accent-gold: #FBBF24;          /* Warm Amber */
-  --accent-emerald: #34D399;       /* Mint Emerald */
-  --accent-emerald-soft: rgba(52, 211, 153, 0.16);
-
-  --text-primary: #F5F2EB;         /* Warm Natural Linen */
-  --text-secondary: #A8A29E;       /* Warm Stone */
-  --text-muted: #78716C;           /* Warm Muted Ash */
+  --card-lavender: #312A50;        /* Deep Lavender Slate */
+  --card-lavender-subtle: #241F3B;
+  --card-lavender-text: #F8F6FF;
   
-  --border-color: #2E2A27;         /* Dark Stone Bronze */
-  --border-subtle: #24211E;
-  --border-focus: rgba(255, 107, 74, 0.45);
+  --card-peach: #3D2825;           /* Deep Warm Terracotta */
+  --card-peach-subtle: #2D1E1C;
+  --card-peach-text: #FFF0EB;
+  
+  --accent-primary: #9D8DF8;       /* Glowing Lavender */
+  --accent-primary-hover: #B0A3FA;
+  --accent-primary-soft: rgba(157, 141, 248, 0.2);
+  --accent-coral: #FFA288;
+  --accent-gold: #FCD34D;
+  --accent-emerald: #34D399;
+  --accent-emerald-soft: rgba(52, 211, 153, 0.2);
 
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 35px -5px rgba(255, 107, 74, 0.3);
+  --text-primary: #F8F6FF;         /* Soft Lavender White */
+  --text-secondary: #B9B2D4;       /* Muted Lilac */
+  --text-muted: #827A9E;           /* Dark Lilac Ash */
+  
+  --border-color: #383056;         /* Deep Lilac Border */
+  --border-subtle: #2B2544;
+  --border-peach: #4A3330;
+  --border-focus: rgba(157, 141, 248, 0.5);
+
+  --shadow-sm: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 6px 12px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 14px 28px -4px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
 }
 
 html {
@@ -83,6 +105,10 @@ html {
 h1, h2, h3, h4, .font-heading {
   font-family: var(--font-heading);
   letter-spacing: -0.025em;
+}
+
+.font-signature {
+  font-family: var(--font-signature);
 }
 
 /* Custom Scrollbar */
@@ -105,12 +131,23 @@ h1, h2, h3, h4, .font-heading {
 }
 
 /* Animations & Keyframes */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(15deg);
+  }
+}
+
 @keyframes floatSlow {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-12px) rotate(1.5deg);
+    transform: translateY(-10px) rotate(2deg);
   }
 }
 
@@ -119,18 +156,7 @@ h1, h2, h3, h4, .font-heading {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(12px) rotate(-1.5deg);
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.25;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.45;
-    transform: scale(1.08);
+    transform: translateY(10px) rotate(-2deg);
   }
 }
 
@@ -143,31 +169,24 @@ h1, h2, h3, h4, .font-heading {
   }
 }
 
-@keyframes ripple {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(22, 163, 74, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
-  }
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-twinkle-delay-1 {
+  animation: twinkle 3.5s ease-in-out infinite 0.7s;
+}
+
+.animate-twinkle-delay-2 {
+  animation: twinkle 4s ease-in-out infinite 1.4s;
 }
 
 .animate-float-slow {
-  animation: floatSlow 7s ease-in-out infinite;
+  animation: floatSlow 6s ease-in-out infinite;
 }
 
 .animate-float-reverse {
-  animation: floatReverse 8s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 5s ease-in-out infinite;
+  animation: floatReverse 7s ease-in-out infinite;
 }
 
 .animate-marquee {
@@ -178,10 +197,6 @@ h1, h2, h3, h4, .font-heading {
 
 .animate-marquee:hover {
   animation-play-state: paused;
-}
-
-.animate-ripple {
-  animation: ripple 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 /* Accessibility: Reduced motion constraints */

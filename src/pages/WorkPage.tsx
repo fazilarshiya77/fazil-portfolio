@@ -7,6 +7,7 @@ import { ProjectModal } from '../components/ProjectModal';
 import { PageTransition } from '../components/PageTransition';
 import { ShieldCheck } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { SparkleStar } from '../components/SparkleStar';
 
 export const WorkPage: React.FC = () => {
   useDocumentTitle('Selected Work & Case Studies');
@@ -22,26 +23,34 @@ export const WorkPage: React.FC = () => {
       <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 bg-[var(--bg-primary)] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Dedicated Page Header */}
-          <div className="pb-10 mb-12 border-b border-[var(--border-color)]">
-            <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[var(--text-muted)] mb-3">
-              <Link to="/" className="hover:text-[var(--accent-primary)] transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-[var(--accent-primary)] font-bold">Selected Work Archive</span>
+          {/* Reference Slide Style Header Card */}
+          <div className="relative rounded-[2.5rem] bg-[#B8B0EA] dark:bg-[#312A50] text-[#232035] dark:text-[#F8F6FF] p-8 sm:p-12 shadow-xl mb-12 overflow-hidden">
+            {/* Sparkling Stars */}
+            <div className="absolute top-8 right-12">
+              <SparkleStar size={28} delay={0} className="text-white opacity-85" />
+            </div>
+            <div className="absolute bottom-8 left-12">
+              <SparkleStar size={24} delay={1} className="text-white opacity-75" />
             </div>
 
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
-                <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--text-primary)]">
-                  Commercial Case Studies
+                <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[#232035]/80 dark:text-[#F8F6FF]/80 mb-2">
+                  <Link to="/" className="hover:underline">Home</Link>
+                  <span>/</span>
+                  <span className="font-bold text-[#232035] dark:text-white">Selected Work Archive</span>
+                </div>
+
+                <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                  My Projects
                 </h1>
-                <p className="text-base sm:text-lg text-[var(--text-secondary)] mt-3 max-w-2xl leading-relaxed">
+                <p className="text-base sm:text-lg text-[#232035]/90 dark:text-[#F8F6FF]/90 mt-2 max-w-2xl leading-relaxed">
                   Five active commercial websites designed and engineered for live businesses. Each project represents an end-to-end delivery: from visual identity and UX research to production React 19 architecture.
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-[var(--bg-surface)] border border-[var(--border-color)] px-4 py-2.5 rounded-xl shadow-xs shrink-0">
-                <ShieldCheck className="w-4 h-4 text-emerald-500" />
+              <div className="flex items-center gap-2 text-xs font-mono bg-white dark:bg-[#221E35] text-[#232035] dark:text-white px-4 py-2.5 rounded-full shadow-md shrink-0">
+                <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span className="font-bold">All 5 sites deployed to production</span>
               </div>
             </div>
@@ -134,6 +143,7 @@ export const WorkPage: React.FC = () => {
         <ProjectModal
           project={activeModalProject}
           onClose={() => setActiveModalProject(null)}
+          onSelectProject={(p) => setActiveModalProject(p)}
         />
       </div>
     </PageTransition>

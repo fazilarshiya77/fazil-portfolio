@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUp, Mail } from 'lucide-react';
 import { LinkedinIcon, GithubIcon } from './SocialIcons';
+import { SparkleStar } from './SparkleStar';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -19,12 +20,13 @@ export const Footer: React.FC = () => {
           
           {/* Identity */}
           <Link to="/" className="flex items-center gap-3 group focus:outline-none">
-            <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary)] text-white flex items-center justify-center font-bold text-sm shadow-xs group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-2xl bg-[#B8B0EA] text-[#232035] flex items-center justify-center font-bold text-sm shadow-xs group-hover:scale-105 transition-transform">
               FA
             </div>
             <div>
-              <span className="font-extrabold text-base tracking-tight text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors block">
-                Fazil Arshiya
+              <span className="font-heading font-extrabold text-base tracking-tight text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors flex items-center gap-1.5">
+                <span>Fazil Arshiya</span>
+                <SparkleStar size={16} className="text-[#B8B0EA]" />
               </span>
               <p className="font-mono text-xs text-[var(--text-secondary)]">
                 Product Designer &amp; Frontend Engineer • Bengaluru, India

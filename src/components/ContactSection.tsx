@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SparkleStar } from './SparkleStar';
 import { 
   Mail, 
   Copy, 
@@ -47,18 +48,19 @@ export const ContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-[var(--border-color)]">
+        <div className="relative flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-[var(--border-color)]">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Initiate Conversation</span>
             </div>
             
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
-              Let’s Build Something{' '}
-              <span className="text-[var(--accent-primary)]">
-                Exceptional.
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[var(--text-primary)] flex items-baseline gap-2 flex-wrap">
+              <span>Let’s work</span>
+              <span className="font-signature text-5xl sm:text-6xl lg:text-7xl text-[#7562E0] dark:text-[#9D8DF8]">
+                together!
               </span>
+              <SparkleStar size={24} className="text-[#B8B0EA]" />
             </h2>
           </div>
 

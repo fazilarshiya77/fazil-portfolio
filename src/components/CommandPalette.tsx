@@ -239,3 +239,4 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
     </AnimatePresence>
   );
 };
+

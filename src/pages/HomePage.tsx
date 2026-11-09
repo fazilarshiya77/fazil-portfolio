@@ -5,15 +5,10 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { Hero } from '../components/Hero';
 import { ProjectCard } from '../components/ProjectCard';
 import { ProjectModal } from '../components/ProjectModal';
+import { SparkleStar } from '../components/SparkleStar';
 import { projectsData, type Project } from '../data/projects';
 import { PageTransition } from '../components/PageTransition';
-import { 
-  ArrowRight, 
-  Palette, 
-  Code2, 
-  Layers,
-  Sparkles
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const HomePage: React.FC = () => {
   useDocumentTitle('Product Designer & Frontend Engineer');
@@ -24,306 +19,242 @@ export const HomePage: React.FC = () => {
 
   return (
     <PageTransition>
-      <div className="relative">
+      <div className="relative pb-24 space-y-16 sm:space-y-24">
         
-        {/* 1. Hero Section with Interactive Tech Switcher */}
+        {/* 1. Top Hero Slide Card (Matches Reference Card 1) */}
         <Hero />
 
-        {/* 2. Curated Personal Positioning & Verified Metrics */}
-        <section className="py-20 sm:py-28 bg-[var(--bg-secondary)]/40 border-b border-[var(--border-color)]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              
-              <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] shadow-xs">
-                  <span>About Fazil</span>
+        {/* 2. Dual Bento Slide Cards: About Me (Peach) & Capabilities (Lavender) */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            
+            {/* Card A: About Me (Soft Peach Card - Matches Reference Row 2 Left) */}
+            <motion.div
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.25 }}
+              className="relative rounded-[2.5rem] bg-[#F8D8C8] dark:bg-[#3D2825] text-[#2D2320] dark:text-[#FFF0EB] p-8 sm:p-12 shadow-xl flex flex-col justify-between overflow-hidden"
+            >
+              {/* Sparkling Stars */}
+              <div className="absolute top-8 right-12">
+                <SparkleStar size={24} delay={0} className="text-[#2D2320]/25 dark:text-white/30" />
+              </div>
+              <div className="absolute bottom-8 left-10">
+                <SparkleStar size={20} delay={1} className="text-[#2D2320]/20 dark:text-white/20" />
+              </div>
+
+              <div className="relative z-10 space-y-6">
+                
+                {/* Header with Organic Badge */}
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <span className="font-mono text-xs uppercase tracking-wider text-[#2D2320]/70 dark:text-[#FFF0EB]/70 font-bold block mb-1">
+                      01 / About Me
+                    </span>
+                    <h3 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight">
+                      Design-Minded.{' '}
+                      <span className="font-signature text-4xl sm:text-5xl text-[#7562E0] dark:text-[#9D8DF8] font-bold block sm:inline">
+                        Code-Grounded.
+                      </span>
+                    </h3>
+                  </div>
+
+                  {/* Organic Heart/Curved Portrait Monogram (Matches Reference Cutout) */}
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white dark:bg-[#2A1D1A] flex items-center justify-center shadow-md shrink-0 border-2 border-white/60 dark:border-white/10">
+                    <span className="font-heading font-black text-2xl text-[#2D2320] dark:text-white">FA</span>
+                  </div>
                 </div>
 
-                <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] tracking-tight leading-tight">
-                  Design-minded. Code-grounded.{' '}
-                  <span className="text-[var(--accent-primary)]">
-                    Engineered for business results.
+                <p className="text-sm sm:text-base leading-relaxed text-[#2D2320]/90 dark:text-[#FFF0EB]/90">
+                  Hi! I'm <strong className="font-bold">Fazil Arshiya</strong>, a digital product designer and frontend engineer in Bengaluru. I bridge user research, modern visual identity, and production React 19 architecture across real estate, logistics, events, and travel.
+                </p>
+
+                {/* Tool Badges */}
+                <div className="flex flex-wrap items-center gap-2 pt-2 font-mono text-xs">
+                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-bold shadow-xs">
+                    Figma
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-bold shadow-xs">
+                    React 19
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-bold shadow-xs">
+                    TypeScript
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-bold shadow-xs">
+                    Tailwind CSS
+                  </span>
+                </div>
+
+              </div>
+
+              {/* Bottom Row Navigation */}
+              <div className="relative z-10 pt-8 mt-6 border-t border-[#2D2320]/15 dark:border-white/10 flex items-center justify-between">
+                <span className="font-mono text-xs text-[#2D2320]/70 dark:text-[#FFF0EB]/70">
+                  📍 Bengaluru, India
+                </span>
+
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#2D2320] text-white hover:bg-black transition-all font-mono text-xs font-bold shadow-sm"
+                >
+                  <span>Full Story</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Card B: Digital Presence & Stack (Soft Lavender Card - Matches Reference Row 2 Right) */}
+            <motion.div
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.25 }}
+              className="relative rounded-[2.5rem] bg-[#B8B0EA] dark:bg-[#312A50] text-[#232035] dark:text-[#F8F6FF] p-8 sm:p-12 shadow-xl flex flex-col justify-between overflow-hidden"
+            >
+              {/* Sparkling Stars */}
+              <div className="absolute top-8 left-12">
+                <SparkleStar size={24} delay={0} className="text-white opacity-85" />
+              </div>
+              <div className="absolute bottom-8 right-12">
+                <SparkleStar size={22} delay={2} className="text-white opacity-75" />
+              </div>
+
+              <div className="relative z-10 space-y-6">
+                <div>
+                  <span className="font-mono text-xs uppercase tracking-wider text-[#232035]/70 dark:text-[#F8F6FF]/70 font-bold block mb-1">
+                    02 / Capabilities &amp; Operations
+                  </span>
+                  <h3 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    Beyond the Frontend
+                  </h3>
+                </div>
+
+                <p className="text-sm sm:text-base leading-relaxed text-[#232035]/90 dark:text-[#F8F6FF]/90">
+                  Real digital products succeed when their administrative workflows are just as polished as public landing pages. I design interactive CRM consoles, lead triage matrices, and WhatsApp dispatch pipelines.
+                </p>
+
+                {/* Perspective Metric Indicators */}
+                <div className="grid grid-cols-2 gap-3 font-mono text-xs pt-1">
+                  <div className="p-3.5 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-xs">
+                    <span className="text-2xl font-black block text-[#232035] dark:text-white">05</span>
+                    <span className="text-[11px] font-bold text-[#232035]/80 dark:text-white/80">Active Websites</span>
+                  </div>
+                  <div className="p-3.5 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-xs">
+                    <span className="text-2xl font-black block text-[#232035] dark:text-white">&lt;24h</span>
+                    <span className="text-[11px] font-bold text-[#232035]/80 dark:text-white/80">Response SLA</span>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Bottom Row Navigation */}
+              <div className="relative z-10 pt-8 mt-6 border-t border-white/20 dark:border-white/10 flex items-center justify-between">
+                <span className="font-mono text-xs text-[#232035]/70 dark:text-[#F8F6FF]/70">
+                  Interactive CRM Console Active
+                </span>
+
+                <Link
+                  to="/capabilities"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#232035] hover:bg-white/90 transition-all font-mono text-xs font-bold shadow-sm"
+                >
+                  <span>Explore Stack</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </motion.div>
+
+          </div>
+        </section>
+
+        {/* 3. "My Projects" Showcase (Matches Reference Row 3 & 4) */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[var(--border-color)]">
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] shadow-xs">
+                <span>03 / Commercial Showcase</span>
+              </div>
+              <h2 className="font-heading text-3xl sm:text-5xl font-black text-[var(--text-primary)] tracking-tight">
+                My Projects
+              </h2>
+            </div>
+
+            <Link
+              to="/work"
+              className="inline-flex items-center gap-2 font-mono text-xs font-bold text-[var(--accent-primary)] hover:underline"
+            >
+              <span>Explore All 5 Case Studies</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          {/* Project Cards Exhibition */}
+          <div className="space-y-12">
+            {featuredProjects.map((project, idx) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={idx}
+                onOpenDetails={(p) => setActiveModalProject(p)}
+              />
+            ))}
+          </div>
+
+        </section>
+
+        {/* 4. "Let's work together!" Contact Banner (Matches Reference Row 5 Card) */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            transition={{ duration: 0.25 }}
+            className="relative rounded-[2.5rem] bg-[#B8B0EA] dark:bg-[#312A50] text-[#232035] dark:text-[#F8F6FF] p-8 sm:p-14 lg:p-16 shadow-2xl overflow-hidden"
+          >
+            {/* Sparkling Stars */}
+            <div className="absolute top-8 left-12">
+              <SparkleStar size={32} delay={0} className="text-white opacity-90" />
+            </div>
+            <div className="absolute bottom-10 right-14">
+              <SparkleStar size={28} delay={1} className="text-white opacity-80" />
+            </div>
+            <div className="absolute top-1/2 right-1/4">
+              <SparkleStar size={20} delay={2} className="text-white opacity-70" />
+            </div>
+
+            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+              
+              <div className="space-y-4 max-w-xl">
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#232035]/80 dark:text-white/80 block">
+                  Available for 2026 Collaborations
+                </span>
+
+                <h2 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-black text-white dark:text-[#F8F6FF] tracking-tight leading-tight">
+                  Let's work{' '}
+                  <span className="font-signature text-5xl sm:text-7xl lg:text-8xl text-[#232035] dark:text-white block sm:inline">
+                    together!
                   </span>
                 </h2>
 
-                <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-                  I collaborate with businesses to translate intricate operational workflows into clean, accessible interfaces and high-performance production code. My work spans luxury property portals, dispatch platforms, interactive package builders, and booking engines.
+                <p className="text-sm sm:text-base text-[#232035]/90 dark:text-[#F8F6FF]/90 leading-relaxed font-medium">
+                  Have an ambitious web app, responsive redesign, or high-conversion product in mind? Let’s initiate a conversation.
                 </p>
-
-                <div className="pt-2 flex flex-wrap items-center gap-4">
-                  <Link
-                    to="/about"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white text-xs font-bold font-mono tracking-wider uppercase shadow-xs transition-all"
-                  >
-                    <span>Read Full Story</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                  
-                  <Link
-                    to="/capabilities"
-                    className="inline-flex items-center gap-2 text-xs font-bold font-mono uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
-                  >
-                    <span>View Capabilities &amp; Stack →</span>
-                  </Link>
-                </div>
               </div>
 
-              {/* Verified Metrics Counter Cards with Hover Springs */}
-              <div className="lg:col-span-5 grid grid-cols-2 gap-4 font-mono">
-                <motion.div 
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                  className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1 hover:border-[var(--accent-primary)] transition-colors"
+              {/* Direct Quick Action CTAs */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0 font-mono text-xs">
+                <Link
+                  to="/contact"
+                  className="px-6 py-4 rounded-full bg-[#232035] text-white hover:bg-black font-bold tracking-wider uppercase text-center shadow-lg transition-all"
                 >
-                  <span className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] block">05</span>
-                  <span className="text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">Live Websites</span>
-                  <span className="text-[11px] text-[var(--text-muted)] font-sans">Active client portals</span>
-                </motion.div>
+                  <span>Start a Project →</span>
+                </Link>
 
-                <motion.div 
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                  className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1 hover:border-[var(--accent-primary)] transition-colors"
+                <a
+                  href="mailto:fazil1ga22is053@gmail.com"
+                  className="px-6 py-4 rounded-full bg-white text-[#232035] hover:bg-white/90 font-bold tracking-wider uppercase text-center shadow-lg transition-all"
                 >
-                  <span className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] block">₹250+ Cr</span>
-                  <span className="text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">Scope Handled</span>
-                  <span className="text-[11px] text-[var(--text-muted)] font-sans">Real-estate transactions</span>
-                </motion.div>
-
-                <motion.div 
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                  className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1 hover:border-emerald-500 transition-colors"
-                >
-                  <span className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] block">100%</span>
-                  <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">Client Deployed</span>
-                  <span className="text-[11px] text-[var(--text-muted)] font-sans">Production releases</span>
-                </motion.div>
-
-                <motion.div 
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                  className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1 hover:border-emerald-500 transition-colors"
-                >
-                  <span className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] block">&lt;24h</span>
-                  <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">Response SLA</span>
-                  <span className="text-[11px] text-[var(--text-muted)] font-sans">Fast collaboration</span>
-                </motion.div>
+                  <span>Copy Email</span>
+                </a>
               </div>
 
             </div>
-          </div>
-        </section>
-
-        {/* 3. Selected Commercial Projects (Curated Preview) */}
-        <section className="py-20 sm:py-28 bg-[var(--bg-primary)] border-b border-[var(--border-color)]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-[var(--border-color)]">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
-                  <span>Selected Work</span>
-                </div>
-                
-                <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
-                  Featured Client Projects
-                </h2>
-              </div>
-
-              <div className="max-w-md">
-                <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
-                  A snapshot of live commercial solutions designed and engineered for active businesses.
-                </p>
-              </div>
-            </div>
-
-            {/* Curated 2 Featured Projects */}
-            <div className="space-y-12 sm:space-y-16">
-              {featuredProjects.map((project, idx) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  index={idx}
-                  onOpenDetails={(p) => setActiveModalProject(p)}
-                />
-              ))}
-            </div>
-
-            {/* Work Archive Navigation Callout */}
-            <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xs">
-              <div className="space-y-1">
-                <span className="font-mono text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">
-                  Complete Portfolio
-                </span>
-                <h3 className="font-heading text-xl sm:text-2xl font-bold text-[var(--text-primary)] tracking-tight">
-                  Looking for more? Explore all 5 production case studies.
-                </h3>
-                <p className="text-xs sm:text-sm text-[var(--text-secondary)]">
-                  Including SID Events Management, The Property Agent portal, and Taj Luxury Tours.
-                </p>
-              </div>
-
-              <Link
-                to="/work"
-                className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold font-mono text-xs uppercase tracking-wider shadow-sm transition-all"
-              >
-                <span>View All 5 Projects</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-          </div>
-        </section>
-
-        {/* 4. Disciplines & Capabilities */}
-        <section className="py-20 sm:py-28 bg-[var(--bg-secondary)]/40 border-b border-[var(--border-color)]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-[var(--border-color)]">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
-                  <span>Core Disciplines</span>
-                </div>
-                <h2 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-primary)]">
-                  What I Bring to Teams
-                </h2>
-              </div>
-              <Link
-                to="/capabilities"
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-primary)] hover:underline"
-              >
-                <span>Inspect Full Stack &amp; CRM Architecture →</span>
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <motion.div 
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.2 }}
-                className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-3 hover:border-[var(--accent-primary)] transition-all"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
-                  <Palette className="w-5 h-5" />
-                </div>
-                <h3 className="font-heading text-lg font-bold text-[var(--text-primary)]">Product UI/UX Design</h3>
-                <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
-                  Translating complex business requirements into intuitive Figma mockups, accessible visual hierarchies, and high-conversion user journeys.
-                </p>
-              </motion.div>
-
-              <motion.div 
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.2 }}
-                className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-3 hover:border-[var(--accent-primary)] transition-all"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
-                  <Code2 className="w-5 h-5" />
-                </div>
-                <h3 className="font-heading text-lg font-bold text-[var(--text-primary)]">Frontend Architecture</h3>
-                <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
-                  Engineering component-driven web apps with React 19, strict TypeScript interfaces, Tailwind CSS tokens, and sub-second Vite builds.
-                </p>
-              </motion.div>
-
-              <motion.div 
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.2 }}
-                className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-3 hover:border-[var(--accent-primary)] transition-all"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[var(--accent-emerald-soft)] text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
-                  <Layers className="w-5 h-5" />
-                </div>
-                <h3 className="font-heading text-lg font-bold text-[var(--text-primary)]">Operations &amp; CRM</h3>
-                <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
-                  Extending web presence into functional operations: lead triage consoles, WhatsApp booking triggers, and responsive dispatch portals.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Process & Methodology Teaser */}
-        <section className="py-20 sm:py-28 bg-[var(--bg-primary)] border-b border-[var(--border-color)]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-[var(--border-color)]">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
-                  <span>Methodology</span>
-                </div>
-                <h2 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-primary)]">
-                  The 4-Stage Delivery Process
-                </h2>
-              </div>
-              <Link
-                to="/process"
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent-primary)] hover:underline"
-              >
-                <span>Read Full Methodology Details →</span>
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-xs">
-              <div className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] space-y-2">
-                <span className="w-7 h-7 rounded-lg bg-[var(--accent-primary)] text-white flex items-center justify-center font-bold text-xs">01</span>
-                <span className="font-heading font-bold text-sm text-[var(--text-primary)] block">Understand</span>
-                <p className="text-[11px] text-[var(--text-secondary)] font-sans">Pain points &amp; requirements scoping</p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] space-y-2">
-                <span className="w-7 h-7 rounded-lg bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold text-xs">02</span>
-                <span className="font-heading font-bold text-sm text-[var(--text-primary)] block">Structure</span>
-                <p className="text-[11px] text-[var(--text-secondary)] font-sans">Information architecture &amp; wireframes</p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] space-y-2">
-                <span className="w-7 h-7 rounded-lg bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold text-xs">03</span>
-                <span className="font-heading font-bold text-sm text-[var(--text-primary)] block">Design &amp; Build</span>
-                <p className="text-[11px] text-[var(--text-secondary)] font-sans">Figma design systems &amp; React code</p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] space-y-2">
-                <span className="w-7 h-7 rounded-lg bg-[var(--accent-emerald-soft)] text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xs">04</span>
-                <span className="font-heading font-bold text-sm text-[var(--text-primary)] block">Refine &amp; Deliver</span>
-                <p className="text-[11px] text-[var(--text-secondary)] font-sans">Cross-viewport QA &amp; Vercel deployment</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 6. Clean High-Impact CTA Banner */}
-        <section className="py-20 sm:py-24 bg-[var(--bg-secondary)] border-b border-[var(--border-color)] relative overflow-hidden">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] shadow-xs">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Available for 2026</span>
-            </span>
-
-            <h2 className="font-heading text-3xl sm:text-5xl font-extrabold text-[var(--text-primary)] tracking-tight">
-              Ready to create something{' '}
-              <span className="text-[var(--accent-primary)]">
-                exceptional?
-              </span>
-            </h2>
-
-            <p className="text-base sm:text-lg text-[var(--text-secondary)] max-w-xl mx-auto leading-relaxed">
-              Whether you need an end-to-end web product, design system, or a dedicated frontend engineer, let’s talk.
-            </p>
-
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-3.5 font-mono text-xs">
-              <Link
-                to="/contact"
-                className="px-6 py-3.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold uppercase tracking-wider shadow-sm transition-all"
-              >
-                <span>Get in Touch →</span>
-              </Link>
-
-              <Link
-                to="/work"
-                className="px-6 py-3.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] font-bold uppercase tracking-wider transition-all shadow-xs"
-              >
-                <span>Browse All Work</span>
-              </Link>
-            </div>
-          </div>
+          </motion.div>
         </section>
 
       </div>
@@ -332,6 +263,7 @@ export const HomePage: React.FC = () => {
       <ProjectModal
         project={activeModalProject}
         onClose={() => setActiveModalProject(null)}
+        onSelectProject={(p) => setActiveModalProject(p)}
       />
     </PageTransition>
   );

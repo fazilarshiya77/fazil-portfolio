@@ -5,6 +5,7 @@ import { SkillsSection } from '../components/SkillsSection';
 import { CodeInspector } from '../components/CodeInspector';
 import { AdminShowcase } from '../components/AdminShowcase';
 import { PageTransition } from '../components/PageTransition';
+import { SparkleStar } from '../components/SparkleStar';
 
 export const CapabilitiesPage: React.FC = () => {
   useDocumentTitle('Technical Capabilities & Operations');
@@ -14,22 +15,30 @@ export const CapabilitiesPage: React.FC = () => {
       <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 bg-[var(--bg-primary)] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Dedicated Page Header */}
-          <div className="pb-10 mb-12 border-b border-[var(--border-color)]">
-            <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[var(--text-muted)] mb-3">
-              <Link to="/" className="hover:text-[var(--accent-primary)] transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-[var(--accent-primary)] font-bold">Capabilities &amp; Systems</span>
+          {/* Reference Slide Style Header Card */}
+          <div className="relative rounded-[2.5rem] bg-[#F8D8C8] dark:bg-[#3D2825] text-[#2D2320] dark:text-[#FFF0EB] p-8 sm:p-12 shadow-xl mb-12 overflow-hidden">
+            {/* Sparkling Stars */}
+            <div className="absolute top-8 right-12">
+              <SparkleStar size={28} delay={0} className="text-[#2D2320]/25 dark:text-white/30" />
+            </div>
+            <div className="absolute bottom-8 left-12">
+              <SparkleStar size={24} delay={1} className="text-[#2D2320]/20 dark:text-white/20" />
             </div>
 
-            <div className="max-w-3xl">
-              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--text-primary)]">
+            <div className="relative z-10 max-w-3xl">
+              <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[#2D2320]/70 dark:text-[#FFF0EB]/70 mb-2">
+                <Link to="/" className="hover:underline">Home</Link>
+                <span>/</span>
+                <span className="font-bold text-[#7562E0] dark:text-[#9D8DF8]">Capabilities &amp; Systems</span>
+              </div>
+
+              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
                 Technical Stack &amp;{' '}
-                <span className="text-[var(--accent-primary)]">
-                  Operations Architecture
+                <span className="font-signature text-5xl sm:text-7xl text-[#7562E0] dark:text-[#9D8DF8] block sm:inline">
+                  Operations
                 </span>
               </h1>
-              <p className="text-base sm:text-lg text-[var(--text-secondary)] mt-4 leading-relaxed font-normal">
+              <p className="text-base sm:text-lg text-[#2D2320]/90 dark:text-[#FFF0EB]/90 mt-2 leading-relaxed font-normal">
                 A disciplined engineering toolkit spanning responsive component design, type-safe architecture, and behind-the-scenes administrative portals.
               </p>
             </div>

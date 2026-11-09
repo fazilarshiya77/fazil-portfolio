@@ -4,6 +4,7 @@ import { useTheme } from '../context/theme';
 import { Sun, Moon, Menu, X, ArrowUpRight, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CommandPalette } from './CommandPalette';
+import { SparkleStar } from './SparkleStar';
 
 export const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -76,12 +77,13 @@ export const Navbar: React.FC = () => {
               className="group flex items-center gap-2.5 focus:outline-none"
               aria-label="Fazil Arshiya - Home"
             >
-              <div className="w-8 h-8 rounded-lg bg-[var(--accent-primary)] text-white flex items-center justify-center font-bold text-xs shadow-xs group-hover:scale-105 transition-transform">
+              <div className="w-8 h-8 rounded-xl bg-[#B8B0EA] text-[#232035] flex items-center justify-center font-bold text-xs shadow-xs group-hover:scale-105 transition-transform">
                 FA
               </div>
               <div className="flex flex-col">
-                <span className="font-heading font-bold text-sm tracking-tight text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors">
-                  Fazil Arshiya
+                <span className="font-heading font-bold text-sm tracking-tight text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors flex items-center gap-1">
+                  <span>Fazil Arshiya</span>
+                  <SparkleStar size={12} className="text-[#B8B0EA]" />
                 </span>
                 <span className="text-[10px] font-mono text-[var(--text-muted)] tracking-wider">
                   Product Designer &amp; Dev
