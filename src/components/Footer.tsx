@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUp, Mail } from 'lucide-react';
 import { LinkedinIcon, GithubIcon } from './SocialIcons';
 
@@ -17,40 +18,40 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-[var(--border-color)]">
           
           {/* Identity */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary)] text-white flex items-center justify-center font-bold text-sm shadow-xs">
+          <Link to="/" className="flex items-center gap-3 group focus:outline-none">
+            <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary)] text-white flex items-center justify-center font-bold text-sm shadow-xs group-hover:scale-105 transition-transform">
               FA
             </div>
             <div>
-              <span className="font-extrabold text-base tracking-tight text-[var(--text-primary)] block">
+              <span className="font-extrabold text-base tracking-tight text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors block">
                 Fazil Arshiya
               </span>
               <p className="font-mono text-xs text-[var(--text-secondary)]">
                 Product Designer &amp; Frontend Engineer • Bengaluru, India
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Quick Nav Links */}
           <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wider font-semibold text-[var(--text-secondary)]">
-            <a href="#work" className="hover:text-[var(--accent-primary)] transition-colors">
+            <Link to="/" className="hover:text-[var(--accent-primary)] transition-colors">
+              Home
+            </Link>
+            <Link to="/work" className="hover:text-[var(--accent-primary)] transition-colors">
               Work
-            </a>
-            <a href="#about" className="hover:text-[var(--accent-primary)] transition-colors">
+            </Link>
+            <Link to="/about" className="hover:text-[var(--accent-primary)] transition-colors">
               About
-            </a>
-            <a href="#admin-showcase" className="hover:text-[var(--accent-primary)] transition-colors">
-              Systems
-            </a>
-            <a href="#skills" className="hover:text-[var(--accent-primary)] transition-colors">
-              Stack
-            </a>
-            <a href="#process" className="hover:text-[var(--accent-primary)] transition-colors">
+            </Link>
+            <Link to="/capabilities" className="hover:text-[var(--accent-primary)] transition-colors">
+              Capabilities
+            </Link>
+            <Link to="/process" className="hover:text-[var(--accent-primary)] transition-colors">
               Process
-            </a>
-            <a href="#contact" className="hover:text-[var(--accent-primary)] transition-colors">
+            </Link>
+            <Link to="/contact" className="hover:text-[var(--accent-primary)] transition-colors">
               Contact
-            </a>
+            </Link>
           </nav>
 
           {/* Social Icons & Back to top */}

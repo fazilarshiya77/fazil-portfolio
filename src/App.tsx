@@ -1,48 +1,51 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { ProjectGrid } from './components/ProjectGrid';
-import { AdminShowcase } from './components/AdminShowcase';
-import { SkillsSection } from './components/SkillsSection';
-import { ProcessSection } from './components/ProcessSection';
-import { AboutSection } from './components/AboutSection';
-import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
+import { HomePage } from './pages/HomePage';
+import { WorkPage } from './pages/WorkPage';
+import { AboutPage } from './pages/AboutPage';
+import { CapabilitiesPage } from './pages/CapabilitiesPage';
+import { ProcessPage } from './pages/ProcessPage';
+import { ContactPage } from './pages/ContactPage';
+
+const AnimatedRoutes: React.FC = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/work" element={<WorkPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/capabilities" element={<CapabilitiesPage />} />
+        <Route path="/process" element={<ProcessPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        {/* Fallback */}
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
 export const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] selection:bg-[var(--accent-soft)] selection:text-[var(--accent)] transition-colors duration-200 antialiased">
-        {/* Architectural grid guide lines (optional subtle boundary) */}
-        <Navbar />
+      <BrowserRouter>
+        <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-200 antialiased flex flex-col justify-between">
+          <ScrollToTop />
+          <Navbar />
 
-        <main id="main-content" className="relative">
-          {/* Hero Section */}
-          <Hero />
+          <main id="main-content" className="flex-1">
+            <AnimatedRoutes />
+          </main>
 
-          {/* Selected Work (5 Live Production Projects) */}
-          <ProjectGrid />
-
-          {/* Beyond the Frontend: Admin & CRM Engineering */}
-          <AdminShowcase />
-
-          {/* Technical Stack & Capabilities */}
-          <SkillsSection />
-
-          {/* 4-Step Engineering Methodology */}
-          <ProcessSection />
-
-          {/* Profile & Perspective */}
-          <AboutSection />
-
-          {/* Contact & Inquiries */}
-          <ContactSection />
-        </main>
-
-        {/* Studio Footer */}
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </BrowserRouter>
     </ThemeProvider>
   );
 };

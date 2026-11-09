@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion, type Variants } from 'framer-motion';
 import { ArrowDown, ArrowUpRight, Sparkles, Code2, Palette, ShieldCheck } from 'lucide-react';
 
@@ -87,21 +88,21 @@ export const Hero: React.FC = () => {
 
             {/* Interactive Buttons */}
             <motion.div variants={itemVariants} className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4 font-mono text-xs">
-              <a
-                href="#work"
+              <Link
+                to="/work"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold tracking-wide uppercase shadow-md shadow-[var(--accent-primary)]/20 hover:shadow-lg transition-all duration-200 group focus:outline-none"
               >
                 <span>Explore Selected Work</span>
                 <ArrowDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
-              </a>
+              </Link>
 
-              <a
-                href="#admin-showcase"
+              <Link
+                to="/capabilities"
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] hover:bg-[var(--bg-peach)]/60 text-[var(--text-primary)] font-bold tracking-wide uppercase transition-all duration-200 shadow-xs focus:outline-none"
               >
-                <span>Admin &amp; CRM Systems</span>
+                <span>Capabilities &amp; CRM</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
-              </a>
+              </Link>
             </motion.div>
 
             {/* Quick Skills Pill Strip */}
@@ -157,13 +158,13 @@ export const Hero: React.FC = () => {
                 </p>
                 <div className="mt-3 flex items-center justify-between text-[11px] font-mono">
                   <span className="text-[var(--text-muted)]">₹250+ Cr Transacted</span>
-                  <a 
-                    href="#work" 
+                  <Link 
+                    to="/work" 
                     className="text-[var(--accent-primary)] font-bold flex items-center gap-1 hover:underline"
                   >
                     <span>View Case</span>
                     <ArrowUpRight className="w-3 h-3" />
-                  </a>
+                  </Link>
                 </div>
               </div>
 

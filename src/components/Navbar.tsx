@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { useTheme } from '../context/theme';
 import { Sun, Moon, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -36,12 +37,12 @@ export const Navbar: React.FC = () => {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { label: 'Work', href: '#work', number: '01' },
-    { label: 'About', href: '#about', number: '02' },
-    { label: 'Systems & CRM', href: '#admin-showcase', number: '03' },
-    { label: 'Capabilities', href: '#skills', number: '04' },
-    { label: 'Process', href: '#process', number: '05' },
-    { label: 'Contact', href: '#contact', number: '06' },
+    { label: 'Home', path: '/', number: '01' },
+    { label: 'Work', path: '/work', number: '02' },
+    { label: 'About', path: '/about', number: '03' },
+    { label: 'Capabilities', path: '/capabilities', number: '04' },
+    { label: 'Process', path: '/process', number: '05' },
+    { label: 'Contact', path: '/contact', number: '06' },
   ];
 
   const handleLinkClick = () => {
@@ -73,8 +74,8 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center justify-between">
             
             {/* Wordmark & Animated Brand Pill */}
-            <a
-              href="#"
+            <Link
+              to="/"
               className="group flex items-center gap-3 focus:outline-none"
               aria-label="Fazil Arshiya - Home"
             >
@@ -90,18 +91,23 @@ export const Navbar: React.FC = () => {
                   Product Designer &amp; Frontend
                 </span>
               </div>
-            </a>
+            </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center gap-1 lg:gap-2 px-3 py-1.5 rounded-full bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs">
+            <nav className="hidden md:flex items-center gap-1 lg:gap-1.5 p-1.5 rounded-full bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs">
               {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]/50 transition-all duration-200 relative group"
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  end={link.path === '/'}
+                  className={({ isActive }) => `px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 relative ${
+                    isActive
+                      ? 'bg-[var(--accent-primary)] text-white shadow-xs'
+                      : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]/50'
+                  }`}
                 >
                   <span>{link.label}</span>
-                </a>
+                </NavLink>
               ))}
             </nav>
 
@@ -122,14 +128,14 @@ export const Navbar: React.FC = () => {
                 )}
               </button>
 
-              {/* Lively CTA */}
-              <a
-                href="#contact"
+              {/* Lively CTA Link to /contact */}
+              <Link
+                to="/contact"
                 className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white text-xs font-semibold shadow-sm hover:shadow-md transition-all duration-200 group focus:outline-none"
               >
                 <span>Let's Talk</span>
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
+              </Link>
 
               {/* Mobile Menu Button */}
               <button
@@ -176,7 +182,7 @@ export const Navbar: React.FC = () => {
                         Fazil Arshiya
                       </span>
                       <span className="font-mono text-[10px] text-[var(--text-secondary)]">
-                        Portfolio Index
+                        Portfolio Navigation
                       </span>
                     </div>
                   </div>
@@ -191,20 +197,25 @@ export const Navbar: React.FC = () => {
 
                 <nav className="mt-6 flex flex-col gap-1.5">
                   {navLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
+                    <NavLink
+                      key={link.path}
+                      to={link.path}
+                      end={link.path === '/'}
                       onClick={handleLinkClick}
-                      className="px-3.5 py-2.5 rounded-xl text-sm font-semibold text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--accent-primary)] transition-colors flex items-center justify-between group"
+                      className={({ isActive }) => `px-3.5 py-2.5 rounded-xl text-sm font-bold transition-colors flex items-center justify-between ${
+                        isActive
+                          ? 'bg-[var(--accent-primary)] text-white shadow-xs'
+                          : 'text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--accent-primary)]'
+                      }`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="font-mono text-xs text-[var(--accent-primary)]">
+                        <span className="font-mono text-xs opacity-75">
                           {link.number}
                         </span>
                         <span>{link.label}</span>
                       </div>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-[var(--text-muted)] group-hover:text-[var(--accent-primary)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </a>
+                      <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+                    </NavLink>
                   ))}
                 </nav>
               </div>
@@ -221,14 +232,14 @@ export const Navbar: React.FC = () => {
                   </button>
                 </div>
 
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   onClick={handleLinkClick}
                   className="w-full text-center py-3 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white text-xs font-bold tracking-wider uppercase font-mono block shadow-sm transition-all flex items-center justify-center gap-2"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Start a Conversation</span>
-                </a>
+                </Link>
               </div>
             </motion.div>
           </motion.div>
