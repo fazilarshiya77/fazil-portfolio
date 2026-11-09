@@ -2,6 +2,7 @@ import React from 'react';
 import { processSteps } from '../data/skills';
 import { CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SparkleStar } from './SparkleStar';
 
 export const ProcessSection: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ export const ProcessSection: React.FC = () => {
               <span>Methodology &amp; Execution</span>
             </div>
             
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[var(--text-primary)]">
               From Problem to Polished Product
             </h2>
           </div>
@@ -29,20 +30,34 @@ export const ProcessSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 4-Step Methodology Grid */}
+        {/* 4-Step Methodology Grid with Alternating Lavender & Peach Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {processSteps.map((step, idx) => {
+            const isEven = idx % 2 === 0;
+            const cardBg = isEven 
+              ? 'bg-[#B8B0EA]/25 dark:bg-[#312A50]/40 border-[#B8B0EA]/50 dark:border-[#312A50]' 
+              : 'bg-[#F8D8C8]/30 dark:bg-[#3D2825]/40 border-[#F8D8C8]/60 dark:border-[#3D2825]';
+
+            const badgeBg = isEven
+              ? 'bg-[#B8B0EA] text-[#232035]'
+              : 'bg-[#F8D8C8] text-[#2D2320]';
+
             return (
               <motion.div
                 key={step.step}
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.2 }}
-                className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-6 sm:p-7 shadow-xs hover:border-[var(--accent-primary)] transition-all flex flex-col justify-between space-y-6"
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.25 }}
+                className={`relative rounded-3xl border ${cardBg} p-6 sm:p-7 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6 overflow-hidden`}
               >
+                {/* Subtle Sparkle Star on Each Card */}
+                <div className="absolute top-4 right-4">
+                  <SparkleStar size={16} delay={idx % 3 as 0 | 1 | 2} className={isEven ? "text-[#B8B0EA] opacity-60" : "text-[#E87252] opacity-60"} />
+                </div>
+
                 <div className="space-y-4">
                   {/* Number Badge */}
                   <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
-                    <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-mono font-extrabold text-sm shadow-xs">
+                    <div className={`w-10 h-10 rounded-2xl ${badgeBg} flex items-center justify-center font-mono font-black text-sm shadow-xs`}>
                       {step.step}
                     </div>
                     <span className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
@@ -71,7 +86,7 @@ export const ProcessSection: React.FC = () => {
                   <ul className="space-y-2 text-xs text-[var(--text-secondary)] font-medium">
                     {step.deliverables.map((item, dIdx) => (
                       <li key={dIdx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[var(--accent-primary)] shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
                     ))}

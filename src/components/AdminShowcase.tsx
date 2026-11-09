@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { sampleAdminLeads, adminCapabilities, type AdminLead } from '../data/adminData';
 import { Search, TrendingUp, Clock, ShieldCheck, LayoutDashboard, Users, Layers, BarChart3, Smartphone } from 'lucide-react';
+import { SparkleStar } from './SparkleStar';
 
 export const AdminShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'New' | 'In Progress' | 'Contacted' | 'Closed'>('all');
@@ -40,8 +41,9 @@ export const AdminShowcase: React.FC = () => {
               <span>Systems &amp; Architecture</span>
             </div>
             
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
-              Beyond the Frontend
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)] flex items-center gap-3">
+              <span>Beyond the Frontend</span>
+              <SparkleStar size={24} className="text-[#B8B0EA] drop-shadow-sm inline-block" />
             </h2>
           </div>
 
@@ -73,9 +75,9 @@ export const AdminShowcase: React.FC = () => {
             </div>
           </div>
 
-          {/* Metric Bar */}
+          {/* Metric Bar with Alternating Lavender & Peach Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 p-6 gap-4 border-b border-[var(--border-color)] bg-[var(--bg-surface)]">
-            <div className="p-4 rounded-xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)]">
+            <div className="p-4 rounded-2xl bg-[#B8B0EA]/20 dark:bg-[#312A50]/30 border border-[#B8B0EA]/40 dark:border-[#312A50]">
               <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--accent-primary)] mb-1">
                 Incoming Inquiries
               </span>
@@ -87,8 +89,8 @@ export const AdminShowcase: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)]">
-              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--text-secondary)] mb-1">
+            <div className="p-4 rounded-2xl bg-[#F8D8C8]/25 dark:bg-[#3D2825]/30 border border-[#F8D8C8]/50 dark:border-[#3D2825]">
+              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[#E87252] mb-1">
                 Avg Response Time
               </span>
               <div className="flex items-baseline gap-2">
@@ -99,7 +101,7 @@ export const AdminShowcase: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)]">
+            <div className="p-4 rounded-2xl bg-[#B8B0EA]/20 dark:bg-[#312A50]/30 border border-[#B8B0EA]/40 dark:border-[#312A50]">
               <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--accent-primary)] mb-1">
                 Pipeline Conversion
               </span>
@@ -109,8 +111,8 @@ export const AdminShowcase: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)]">
-              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--text-secondary)] mb-1">
+            <div className="p-4 rounded-2xl bg-[#F8D8C8]/25 dark:bg-[#3D2825]/30 border border-[#F8D8C8]/50 dark:border-[#3D2825]">
+              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[#E87252] mb-1">
                 Connected Portals
               </span>
               <div className="flex items-baseline gap-2">

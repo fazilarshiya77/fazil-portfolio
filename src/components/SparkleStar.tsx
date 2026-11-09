@@ -26,3 +26,4 @@ export const SparkleStar: React.FC<SparkleStarProps> = ({
     </svg>
   );
 };
+
