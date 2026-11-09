@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { projectsData, projectCategories, type Project } from '../data/projects';
 import { ProjectCard } from '../components/ProjectCard';
 import { ProjectModal } from '../components/ProjectModal';
@@ -8,6 +9,7 @@ import { ShieldCheck } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 
 export const WorkPage: React.FC = () => {
+  useDocumentTitle('Selected Work & Case Studies');
   const [selectedCategory, setSelectedCategory] = useState<string>('All Projects');
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
 
@@ -21,7 +23,7 @@ export const WorkPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Dedicated Page Header */}
-          <div className="pb-10 mb-12 sm:mb-16 border-b border-[var(--border-color)]">
+          <div className="pb-10 mb-12 border-b border-[var(--border-color)]">
             <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[var(--text-muted)] mb-3">
               <Link to="/" className="hover:text-[var(--accent-primary)] transition-colors">Home</Link>
               <span>/</span>
@@ -30,7 +32,7 @@ export const WorkPage: React.FC = () => {
 
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--text-primary)]">
+                <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--text-primary)]">
                   Commercial Case Studies
                 </h1>
                 <p className="text-base sm:text-lg text-[var(--text-secondary)] mt-3 max-w-2xl leading-relaxed">
@@ -46,7 +48,7 @@ export const WorkPage: React.FC = () => {
           </div>
 
           {/* Category Filter Bar */}
-          <div className="flex items-center justify-between flex-wrap gap-4 mb-12 font-mono text-xs">
+          <div className="flex items-center justify-between flex-wrap gap-4 mb-10 font-mono text-xs">
             <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 no-scrollbar">
               {projectCategories.map((category) => {
                 const count = category === 'All Projects'
@@ -61,7 +63,7 @@ export const WorkPage: React.FC = () => {
                     onClick={() => setSelectedCategory(category)}
                     className={`px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-2 font-bold focus:outline-none shadow-xs ${
                       isActive
-                        ? 'bg-[var(--accent-primary)] text-white shadow-md shadow-[var(--accent-primary)]/20'
+                        ? 'bg-[var(--accent-primary)] text-white shadow-xs'
                         : 'bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] border border-[var(--border-color)]'
                     }`}
                     aria-pressed={isActive}
@@ -83,7 +85,7 @@ export const WorkPage: React.FC = () => {
           </div>
 
           {/* Complete Case Studies Exhibition */}
-          <div className="space-y-16 sm:space-y-24">
+          <div className="space-y-12 sm:space-y-16">
             <AnimatePresence>
               {filteredProjects.map((project, idx) => (
                 <ProjectCard
@@ -97,12 +99,12 @@ export const WorkPage: React.FC = () => {
           </div>
 
           {/* Next Steps Navigation Bar */}
-          <div className="mt-24 p-8 rounded-3xl bg-[var(--bg-lavender-subtle)] border border-[var(--border-lavender)] flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xs">
-            <div className="space-y-1.5">
-              <span className="font-mono text-xs font-bold text-[var(--accent-lavender-dark)] uppercase tracking-wider block">
+          <div className="mt-20 p-8 rounded-2xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)] flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xs">
+            <div className="space-y-1">
+              <span className="font-mono text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">
                 Next in the Experience
               </span>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-[var(--text-primary)] tracking-tight">
+              <h3 className="font-heading text-xl sm:text-2xl font-bold text-[var(--text-primary)] tracking-tight">
                 Inspect Behind-the-Scenes Architecture &amp; CRM Systems
               </h3>
               <p className="text-xs sm:text-sm text-[var(--text-secondary)]">
@@ -112,7 +114,7 @@ export const WorkPage: React.FC = () => {
 
             <Link
               to="/capabilities"
-              className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold font-mono text-xs uppercase tracking-wider shadow-sm transition-all"
+              className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold font-mono text-xs uppercase tracking-wider shadow-xs transition-all"
             >
               <span>Explore Capabilities →</span>
             </Link>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Palette, Code2, Layers, Sparkles, MapPin, Briefcase } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
@@ -10,15 +9,15 @@ export const AboutSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 sm:mb-16 border-b border-[var(--border-color)]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-orange)] mb-3 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
               <span>01</span>
               <span>/</span>
               <span>Profile &amp; Perspective</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
               Design-Minded.{' '}
-              <span className="font-display-italic font-normal text-[var(--accent-primary)]">
+              <span className="text-[var(--accent-primary)]">
                 Code-Grounded.
               </span>
             </h2>
@@ -36,7 +35,7 @@ export const AboutSection: React.FC = () => {
           
           {/* Left Column: Authoritative Editorial Statement & Metrics */}
           <div className="lg:col-span-7 space-y-8">
-            <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-7 sm:p-9 shadow-sm space-y-6">
+            <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-7 sm:p-9 shadow-xs space-y-6">
               <p className="text-lg sm:text-xl font-normal text-[var(--text-primary)] leading-relaxed">
                 I’m <span className="font-bold text-[var(--accent-primary)]">Fazil Arshiya</span>, a product designer and web developer based in Bengaluru. My work bridges UX research, creative visual identity, and modern frontend engineering across real estate, transportation, event management, and travel.
               </p>
@@ -51,136 +50,118 @@ export const AboutSection: React.FC = () => {
 
               {/* Verified Metrics Counter Strip */}
               <div className="pt-6 border-t border-[var(--border-color)] grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono">
-                <div className="p-3 rounded-xl bg-[var(--bg-peach)]/60 border border-[var(--border-orange)]">
+                <div className="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)]">
                   <span className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] block">05</span>
                   <span className="text-[10px] text-[var(--accent-primary)] font-bold uppercase tracking-wider">Live Deployments</span>
                 </div>
 
-                <div className="p-3 rounded-xl bg-[var(--bg-butter)]/60 border border-[var(--accent-butter)]/60">
+                <div className="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)]">
                   <span className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] block">₹250+ Cr</span>
-                  <span className="text-[10px] text-[var(--accent-butter-dark)] font-bold uppercase tracking-wider">Property Scope</span>
+                  <span className="text-[10px] text-[var(--accent-primary)] font-bold uppercase tracking-wider">Property Scope</span>
                 </div>
 
-                <div className="p-3 rounded-xl bg-[var(--bg-lavender)]/60 border border-[var(--border-lavender)]">
+                <div className="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)]">
                   <span className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] block">100%</span>
-                  <span className="text-[10px] text-[var(--accent-lavender-dark)] font-bold uppercase tracking-wider">Client Verified</span>
+                  <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">Client Verified</span>
                 </div>
 
-                <div className="p-3 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
+                <div className="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)]">
                   <span className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] block">&lt;24h</span>
-                  <span className="text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-wider">Response SLA</span>
+                  <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">Response SLA</span>
                 </div>
               </div>
 
-              {/* Spec Metadata Strip */}
+              {/* Location & Status Pills */}
               <div className="pt-4 border-t border-[var(--border-color)] flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-[var(--text-secondary)]">
-                <div className="flex items-center gap-1.5 font-semibold text-[var(--text-primary)]">
+                <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-[var(--accent-primary)]" />
-                  <span>Bengaluru, India (IST / UTC +5:30)</span>
+                  <span>Based in Bengaluru, India</span>
                 </div>
-                <div className="flex items-center gap-1.5 font-semibold text-[var(--text-primary)]">
-                  <Briefcase className="w-4 h-4 text-[var(--accent-primary)]" />
-                  <span>Open to Full-Time &amp; Contracts</span>
+                <div className="flex items-center gap-2">
+                  <Briefcase className="w-4 h-4 text-emerald-500" />
+                  <span>Open to Full-Time &amp; High-Impact Contracts</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: 4 Interactive Discipline Dimensions */}
+          {/* Right Column: 4 Disciplines Pillar Cards */}
           <div className="lg:col-span-5 space-y-4">
-            
-            {/* Dimension 1: UI/UX & Design Systems */}
-            <motion.div 
-              whileHover={{ y: -3 }}
-              className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-xs transition-all hover:border-[var(--accent-primary)] group"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--bg-butter)] text-[var(--accent-butter-dark)] flex items-center justify-center font-bold">
+            <div className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-xs">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
                     <Palette className="w-4 h-4" />
                   </div>
-                  <span className="font-bold text-sm text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors">
-                    UI/UX &amp; Design Systems
-                  </span>
+                  <h3 className="font-heading font-bold text-sm text-[var(--text-primary)]">
+                    Product UI/UX Design
+                  </h3>
                 </div>
-                <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-[var(--bg-butter)] text-[var(--accent-butter-dark)]">
-                  Figma-First
+                <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-[var(--bg-secondary)] text-[var(--text-secondary)]">
+                  Figma
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
-                Crafting coherent visual systems, typography pairings, mobile touch targets, and frictionless conversion pathways.
+              <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                Design systems, responsive ergonomics (375px to 1440px+), WCAG AA contrast control, and interaction specifications.
               </p>
-            </motion.div>
+            </div>
 
-            {/* Dimension 2: Modern Frontend Architecture */}
-            <motion.div 
-              whileHover={{ y: -3 }}
-              className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-xs transition-all hover:border-[var(--accent-primary)] group"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--bg-peach)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
+            <div className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-xs">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
                     <Code2 className="w-4 h-4" />
                   </div>
-                  <span className="font-bold text-sm text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors">
+                  <h3 className="font-heading font-bold text-sm text-[var(--text-primary)]">
                     Frontend Architecture
-                  </span>
+                  </h3>
                 </div>
-                <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-[var(--bg-peach)] text-[var(--accent-primary)]">
-                  React 19 &amp; TS
+                <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-[var(--bg-secondary)] text-[var(--accent-primary)]">
+                  React 19
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
-                Component-driven engineering with React 19, strict TypeScript interfaces, Tailwind CSS design tokens, and sub-second Vite bundling.
+              <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                Component-driven codebases, custom hooks, strict TypeScript interfaces, Tailwind CSS tokens, and sub-second builds.
               </p>
-            </motion.div>
+            </div>
 
-            {/* Dimension 3: Commercial Systems & CRM */}
-            <motion.div 
-              whileHover={{ y: -3 }}
-              className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-xs transition-all hover:border-[var(--accent-primary)] group"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--bg-lavender)] text-[var(--accent-lavender-dark)] flex items-center justify-center font-bold">
+            <div className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-xs">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[var(--accent-emerald-soft)] text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
                     <Layers className="w-4 h-4" />
                   </div>
-                  <span className="font-bold text-sm text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors">
-                    Operational Dashboards &amp; CRM
-                  </span>
+                  <h3 className="font-heading font-bold text-sm text-[var(--text-primary)]">
+                    Operations, Dashboards &amp; CRM
+                  </h3>
                 </div>
-                <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-[var(--bg-lavender)] text-[var(--accent-lavender-dark)]">
-                  Operations
+                <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-[var(--bg-secondary)] text-emerald-600 dark:text-emerald-400">
+                  Full Flow
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
-                Extending websites into operational powerhouses: inquiry triage, WhatsApp webhook dispatches, and custom booking pipelines.
+              <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                Management consoles, WhatsApp notification pipelines, lead triage matrices, and client operations tools.
               </p>
-            </motion.div>
+            </div>
 
-            {/* Dimension 4: Modern AI-Augmented Workflows */}
-            <motion.div 
-              whileHover={{ y: -3 }}
-              className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-xs transition-all hover:border-[var(--accent-primary)] group"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--bg-primary)] text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+            <div className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-xs">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
                     <Sparkles className="w-4 h-4" />
                   </div>
-                  <span className="font-bold text-sm text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors">
-                    AI-Augmented Workflows
-                  </span>
+                  <h3 className="font-heading font-bold text-sm text-[var(--text-primary)]">
+                    AI-Augmented Engineering
+                  </h3>
                 </div>
-                <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                  Modern Tooling
+                <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-[var(--bg-secondary)] text-[var(--accent-primary)]">
+                  Modern
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
-                Leveraging agentic LLM pair-programming tools (Claude, Gemini, Antigravity) to accelerate edge-case handling, documentation, and QA.
+              <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                Leveraging Claude, Gemini, and Antigravity to accelerate prototype scaffolding, test coverage, and documentation.
               </p>
-            </motion.div>
-
+            </div>
           </div>
 
         </div>

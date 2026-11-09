@@ -17,34 +17,24 @@ export const SkillsSection: React.FC = () => {
     }
   };
 
-  const getCategoryColor = (id: string) => {
-    switch (id) {
-      case 'ui-ux': return { bg: 'bg-[var(--bg-butter)]', text: 'text-[var(--accent-butter-dark)]', border: 'border-[var(--accent-butter)]' };
-      case 'frontend': return { bg: 'bg-[var(--bg-peach)]', text: 'text-[var(--accent-primary)]', border: 'border-[var(--border-orange)]' };
-      case 'backend': return { bg: 'bg-[var(--bg-lavender)]', text: 'text-[var(--accent-lavender-dark)]', border: 'border-[var(--border-lavender)]' };
-      case 'ai-workflows': return { bg: 'bg-emerald-50 dark:bg-emerald-950/40', text: 'text-emerald-700 dark:text-emerald-400', border: 'border-emerald-300 dark:border-emerald-800' };
-      default: return { bg: 'bg-[var(--bg-secondary)]', text: 'text-[var(--text-primary)]', border: 'border-[var(--border-color)]' };
-    }
-  };
-
   const filteredCategories = selectedCategoryId === 'all'
     ? skillsCategories
     : skillsCategories.filter(cat => cat.id === selectedCategoryId);
 
   return (
-    <section id="skills" className="py-20 sm:py-28 md:py-36 bg-[var(--bg-primary)] border-b border-[var(--border-color)] scroll-mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-12 sm:py-16 bg-[var(--bg-primary)] scroll-mt-16">
+      <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 sm:mb-16 border-b border-[var(--border-color)]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-10 border-b border-[var(--border-color)]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--bg-butter)] text-[var(--accent-butter-dark)] border border-[var(--accent-butter)]/60 mb-3 shadow-xs">
-              <span>04</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
+              <span>01</span>
               <span>/</span>
               <span>Capabilities &amp; Stack</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
               Technical Stack &amp; Disciplines
             </h2>
           </div>
@@ -57,12 +47,12 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Category Filters Bar */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-6 mb-12 no-scrollbar font-mono text-xs">
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar font-mono text-xs">
           <button
             onClick={() => setSelectedCategoryId('all')}
             className={`px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-2 font-bold focus:outline-none shadow-xs ${
               selectedCategoryId === 'all'
-                ? 'bg-[var(--accent-primary)] text-white shadow-md shadow-[var(--accent-primary)]/20'
+                ? 'bg-[var(--accent-primary)] text-white shadow-xs'
                 : 'bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-color)]'
             }`}
           >
@@ -78,7 +68,7 @@ export const SkillsSection: React.FC = () => {
                 onClick={() => setSelectedCategoryId(cat.id)}
                 className={`px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-2 whitespace-nowrap font-bold focus:outline-none shadow-xs ${
                   isSelected
-                    ? 'bg-[var(--accent-primary)] text-white shadow-md shadow-[var(--accent-primary)]/20'
+                    ? 'bg-[var(--accent-primary)] text-white shadow-xs'
                     : 'bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-color)]'
                 }`}
               >
@@ -90,18 +80,16 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Dynamic Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredCategories.map((category) => {
-            const colors = getCategoryColor(category.id);
-
             return (
               <motion.div
                 key={category.id}
                 layout
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className={`rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-6 sm:p-8 shadow-sm hover:shadow-md hover:border-[var(--accent-primary)] transition-all flex flex-col justify-between ${
+                transition={{ duration: 0.3 }}
+                className={`rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-6 sm:p-7 shadow-xs hover:border-[var(--accent-primary)] transition-all flex flex-col justify-between ${
                   category.id === 'ai-workflows' ? 'lg:col-span-2' : ''
                 }`}
               >
@@ -109,28 +97,28 @@ export const SkillsSection: React.FC = () => {
                   {/* Category Header */}
                   <div className="flex items-center justify-between pb-4 mb-4 border-b border-[var(--border-color)]">
                     <div className="flex items-center gap-3">
-                      <div className={`w-9 h-9 rounded-xl ${colors.bg} ${colors.text} flex items-center justify-center font-bold`}>
+                      <div className="w-9 h-9 rounded-xl bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
                         {getCategoryIcon(category.iconName)}
                       </div>
-                      <h3 className="text-xl font-extrabold text-[var(--text-primary)]">
+                      <h3 className="font-heading text-lg font-bold text-[var(--text-primary)]">
                         {category.name}
                       </h3>
                     </div>
-                    <span className="font-mono text-xs font-bold px-2 py-0.5 rounded-md bg-[var(--bg-secondary)] text-[var(--text-secondary)]">
+                    <span className="font-mono text-xs font-semibold px-2 py-0.5 rounded-md bg-[var(--bg-secondary)] text-[var(--text-secondary)]">
                       {category.skills.length} Items
                     </span>
                   </div>
 
-                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
                     {category.description}
                   </p>
 
                   {/* Skill Items */}
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     {category.skills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="group p-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)]/50 hover:bg-[var(--bg-peach)]/30 hover:border-[var(--border-orange)] transition-colors"
+                        className="p-3 rounded-xl border border-[var(--border-color)] bg-[var(--bg-primary)]/40 hover:bg-[var(--bg-surface)] hover:border-[var(--accent-primary)] transition-colors"
                       >
                         <div className="flex items-baseline justify-between gap-2">
                           <span className="text-xs sm:text-sm font-bold text-[var(--text-primary)] flex items-center gap-1.5">
@@ -140,7 +128,7 @@ export const SkillsSection: React.FC = () => {
                             <span>{skill.name}</span>
                           </span>
                           {skill.isHighlight && (
-                            <span className="font-mono text-[10px] uppercase font-bold text-[var(--accent-primary)] px-2 py-0.5 rounded bg-[var(--bg-peach)]">
+                            <span className="font-mono text-[10px] uppercase font-bold text-[var(--accent-primary)] px-2 py-0.5 rounded bg-[var(--accent-primary-soft)]">
                               Core
                             </span>
                           )}
@@ -155,9 +143,9 @@ export const SkillsSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-[var(--border-color)] flex items-center justify-between font-mono text-xs text-[var(--text-muted)]">
+                <div className="mt-6 pt-4 border-t border-[var(--border-color)] flex items-center justify-between font-mono text-xs text-[var(--text-muted)]">
                   <span>Applied in Production</span>
-                  <span className="text-[var(--accent-primary)] font-bold">100% Deployed</span>
+                  <span className="text-emerald-600 dark:text-emerald-400 font-bold">100% Deployed</span>
                 </div>
               </motion.div>
             );
@@ -165,20 +153,20 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Thoughtful AI Philosophy Callout Banner */}
-        <div className="mt-12 p-8 rounded-3xl border border-[var(--border-orange)] bg-[var(--bg-peach)]/50 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-3xl">
+        <div className="mt-12 p-6 sm:p-8 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xs">
+          <div className="space-y-1.5 max-w-3xl">
             <span className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--accent-primary)] block">
               Perspective / Engineering Philosophy
             </span>
-            <h4 className="text-xl font-extrabold text-[var(--text-primary)] tracking-tight">
+            <h4 className="font-heading text-xl font-bold text-[var(--text-primary)] tracking-tight">
               AI Tools as an Engineering Accelerator, Not a Substitute
             </h4>
-            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
               Foundational design systems, semantic HTML, and strict TypeScript interfaces provide the architecture; modern agentic models (Claude, Gemini, Antigravity) accelerate prototyping, test scaffolding, and continuous refactoring without sacrificing human craftsmanship.
             </p>
           </div>
 
-          <div className="shrink-0 px-4 py-2 rounded-xl bg-white dark:bg-[#1C1D1A] border border-[var(--border-orange)] font-mono text-xs font-bold text-[var(--accent-primary)] shadow-xs">
+          <div className="shrink-0 px-4 py-2 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] font-mono text-xs font-bold text-[var(--accent-primary)] shadow-xs">
             Accelerated Delivery
           </div>
         </div>

@@ -27,19 +27,19 @@ export const AdminShowcase: React.FC = () => {
   };
 
   return (
-    <section id="admin-showcase" className="py-20 sm:py-28 md:py-36 bg-[var(--bg-lavender-subtle)] border-b border-[var(--border-color)] scroll-mt-16 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="admin-showcase" className="py-12 sm:py-16 bg-[var(--bg-primary)] scroll-mt-16 transition-colors">
+      <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 sm:mb-16 border-b border-[var(--border-color)]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-10 border-b border-[var(--border-color)]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--bg-lavender)] text-[var(--accent-lavender-dark)] border border-[var(--border-lavender)] mb-3 shadow-xs">
-              <span>03</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
+              <span>02</span>
               <span>/</span>
               <span>Systems &amp; Architecture</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-primary)]">
               Beyond the Frontend
             </h2>
           </div>
@@ -52,16 +52,16 @@ export const AdminShowcase: React.FC = () => {
         </div>
 
         {/* High-End Enterprise CRM Demonstration Console */}
-        <div className="rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] overflow-hidden shadow-lg shadow-[var(--shadow-card)] mb-16">
+        <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] overflow-hidden shadow-sm mb-16">
           
           {/* Top Specification Banner */}
-          <div className="px-6 py-4 bg-[var(--bg-primary)] border-b border-[var(--border-color)] flex flex-wrap items-center justify-between gap-3 font-mono text-xs text-[var(--text-secondary)]">
+          <div className="px-6 py-4 bg-[var(--bg-secondary)]/50 border-b border-[var(--border-color)] flex flex-wrap items-center justify-between gap-3 font-mono text-xs text-[var(--text-secondary)]">
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent-primary)] animate-pulse" />
               <span className="text-[var(--text-primary)] font-bold uppercase tracking-wider">
                 CRM &amp; Inquiries Command Console
               </span>
-              <span className="hidden sm:inline px-2 py-0.5 rounded-md bg-[var(--bg-butter)] text-[var(--accent-butter-dark)] font-bold text-[10px]">
+              <span className="hidden sm:inline px-2 py-0.5 rounded-md bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] font-bold text-[10px]">
                 Interactive Demonstration
               </span>
             </div>
@@ -72,9 +72,9 @@ export const AdminShowcase: React.FC = () => {
             </div>
           </div>
 
-          {/* Metric Bar with Pastel Accent Cards */}
+          {/* Metric Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 p-6 gap-4 border-b border-[var(--border-color)] bg-[var(--bg-surface)]">
-            <div className="p-4 rounded-2xl bg-[var(--bg-peach)]/60 border border-[var(--border-orange)]">
+            <div className="p-4 rounded-xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)]">
               <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--accent-primary)] mb-1">
                 Incoming Inquiries
               </span>
@@ -86,29 +86,29 @@ export const AdminShowcase: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[var(--bg-butter)]/60 border border-[var(--accent-butter)]/60">
-              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--accent-butter-dark)] mb-1">
+            <div className="p-4 rounded-xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)]">
+              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--text-secondary)] mb-1">
                 Avg Response Time
               </span>
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--text-primary)]">12m</span>
-                <span className="text-xs text-[var(--accent-butter-dark)] font-bold flex items-center">
+                <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold flex items-center">
                   <Clock className="w-3.5 h-3.5 mr-0.5" /> Optimal
                 </span>
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[var(--bg-lavender)]/60 border border-[var(--border-lavender)]">
-              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--accent-lavender-dark)] mb-1">
+            <div className="p-4 rounded-xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)]">
+              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--accent-primary)] mb-1">
                 Pipeline Conversion
               </span>
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--text-primary)]">38.4%</span>
-                <span className="text-xs text-[var(--accent-lavender-dark)] font-bold">Active SLA</span>
+                <span className="text-xs text-[var(--accent-primary)] font-bold">Active SLA</span>
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
+            <div className="p-4 rounded-xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)]">
               <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--text-secondary)] mb-1">
                 Connected Portals
               </span>
@@ -170,8 +170,8 @@ export const AdminShowcase: React.FC = () => {
                       onClick={() => setSelectedLead(lead)}
                       className={`cursor-pointer transition-colors ${
                         isSelected 
-                          ? 'bg-[var(--bg-peach)]/50' 
-                          : 'hover:bg-[var(--bg-primary)]/60'
+                          ? 'bg-[var(--accent-primary-soft)]' 
+                          : 'hover:bg-[var(--bg-secondary)]/40'
                       }`}
                     >
                       <td className="py-4 px-6">
@@ -195,11 +195,11 @@ export const AdminShowcase: React.FC = () => {
                         <span
                           className={`px-2.5 py-1 rounded-lg border ${
                             lead.status === 'New'
-                              ? 'border-[var(--accent-butter)] bg-[var(--bg-butter)] text-[var(--accent-butter-dark)]'
+                              ? 'border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-400'
                               : lead.status === 'In Progress'
-                              ? 'border-[var(--border-orange)] bg-[var(--bg-peach)] text-[var(--accent-primary)]'
+                              ? 'border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400'
                               : lead.status === 'Contacted'
-                              ? 'border-[var(--border-lavender)] bg-[var(--bg-lavender)] text-[var(--accent-lavender-dark)]'
+                              ? 'border-sky-200 dark:border-sky-800 bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-400'
                               : 'border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400'
                           }`}
                         >
@@ -216,7 +216,7 @@ export const AdminShowcase: React.FC = () => {
                           className={`px-3 py-1.5 rounded-lg border font-bold transition-all ${
                             isSelected
                               ? 'border-[var(--accent-primary)] bg-[var(--accent-primary)] text-white shadow-xs'
-                              : 'border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)]'
+                              : 'border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)]'
                           }`}
                         >
                           {isSelected ? 'Inspecting' : 'Inspect'}
@@ -279,10 +279,10 @@ export const AdminShowcase: React.FC = () => {
           {adminCapabilities.map((cap, idx) => (
             <div
               key={cap.title}
-              className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-6 sm:p-7 shadow-xs hover:shadow-md hover:border-[var(--accent-primary)] transition-all space-y-3"
+              className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-6 sm:p-7 shadow-xs hover:border-[var(--accent-primary)] transition-all space-y-3"
             >
               <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-[var(--bg-peach)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
                   {getCapabilityIcon(cap.icon)}
                 </div>
                 <span className="font-mono text-xs font-bold text-[var(--text-muted)]">
@@ -290,7 +290,7 @@ export const AdminShowcase: React.FC = () => {
                 </span>
               </div>
 
-              <h3 className="text-lg font-bold text-[var(--text-primary)] tracking-tight">
+              <h3 className="font-heading text-lg font-bold text-[var(--text-primary)] tracking-tight">
                 {cap.title}
               </h3>
               <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
