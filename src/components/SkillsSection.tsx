@@ -46,17 +46,24 @@ export const SkillsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Category Filters Bar */}
+        {/* Category Filters Bar with Sliding Pill */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar font-mono text-xs">
           <button
             onClick={() => setSelectedCategoryId('all')}
-            className={`px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-2 font-bold focus:outline-none shadow-xs ${
-              selectedCategoryId === 'all'
-                ? 'bg-[var(--accent-primary)] text-white shadow-xs'
-                : 'bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-color)]'
-            }`}
+            className="relative px-4 py-2 rounded-xl transition-colors duration-150 flex items-center gap-2 font-bold focus:outline-none"
           >
-            <span>All Categories</span>
+            {selectedCategoryId === 'all' ? (
+              <motion.div
+                layoutId="skillsTabPill"
+                transition={{ type: 'spring', bounce: 0.2, duration: 0.35 }}
+                className="absolute inset-0 bg-[var(--accent-primary)] rounded-xl shadow-xs z-0"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-xl z-0" />
+            )}
+            <span className={`relative z-10 ${selectedCategoryId === 'all' ? 'text-white' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`}>
+              All Categories
+            </span>
           </button>
           
           {skillsCategories.map((cat) => {
@@ -66,14 +73,23 @@ export const SkillsSection: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategoryId(cat.id)}
-                className={`px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-2 whitespace-nowrap font-bold focus:outline-none shadow-xs ${
-                  isSelected
-                    ? 'bg-[var(--accent-primary)] text-white shadow-xs'
-                    : 'bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-color)]'
-                }`}
+                className="relative px-4 py-2 rounded-xl transition-colors duration-150 flex items-center gap-2 whitespace-nowrap font-bold focus:outline-none"
               >
-                <span>{getCategoryIcon(cat.iconName)}</span>
-                <span>{cat.name}</span>
+                {isSelected ? (
+                  <motion.div
+                    layoutId="skillsTabPill"
+                    transition={{ type: 'spring', bounce: 0.2, duration: 0.35 }}
+                    className="absolute inset-0 bg-[var(--accent-primary)] rounded-xl shadow-xs z-0"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-xl z-0" />
+                )}
+                <span className={`relative z-10 ${isSelected ? 'text-white' : 'text-[var(--text-secondary)]'}`}>
+                  {getCategoryIcon(cat.iconName)}
+                </span>
+                <span className={`relative z-10 ${isSelected ? 'text-white' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`}>
+                  {cat.name}
+                </span>
               </button>
             );
           })}

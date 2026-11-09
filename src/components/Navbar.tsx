@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTheme } from '../context/theme';
-import { Sun, Moon, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Sun, Moon, Menu, X, ArrowUpRight, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CommandPalette } from './CommandPalette';
 
 export const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +18,19 @@ export const Navbar: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Global Cmd+K / Ctrl+K listener
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setCommandPaletteOpen(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   // Lock body scroll when mobile menu is open
@@ -92,8 +107,22 @@ export const Navbar: React.FC = () => {
               ))}
             </nav>
 
-            {/* Right Controls: Theme Toggle & Contact Button */}
+            {/* Right Controls: Quick Search Cmd+K, Theme Toggle & Contact Button */}
             <div className="flex items-center gap-2.5">
+              
+              {/* Cmd+K Search Trigger */}
+              <button
+                onClick={() => setCommandPaletteOpen(true)}
+                className="hidden lg:flex items-center gap-2 px-2.5 py-1 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)] text-xs font-mono transition-colors shadow-xs"
+                title="Quick Command Palette (Ctrl+K or ⌘K)"
+              >
+                <Search className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
+                <span className="text-[11px]">Search</span>
+                <kbd className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--bg-secondary)] border border-[var(--border-color)] font-mono">
+                  ⌘K
+                </kbd>
+              </button>
+
               <button
                 onClick={toggleTheme}
                 type="button"
@@ -190,6 +219,17 @@ export const Navbar: React.FC = () => {
               </div>
 
               <div className="pt-4 border-t border-[var(--border-color)] space-y-3">
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setCommandPaletteOpen(true);
+                  }}
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-primary)] text-xs font-mono font-bold"
+                >
+                  <Search className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
+                  <span>Search &amp; Jump (⌘K)</span>
+                </button>
+
                 <Link
                   to="/contact"
                   onClick={handleLinkClick}
@@ -202,6 +242,12 @@ export const Navbar: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Global Interactive Command Palette */}
+      <CommandPalette
+        isOpen={commandPaletteOpen}
+        onClose={() => setCommandPaletteOpen(false)}
+      />
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { Hero } from '../components/Hero';
 import { ProjectCard } from '../components/ProjectCard';
@@ -67,31 +68,47 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Verified Metrics Counter Cards */}
+              {/* Verified Metrics Counter Cards with Hover Springs */}
               <div className="lg:col-span-5 grid grid-cols-2 gap-4 font-mono">
-                <div className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1">
+                <motion.div 
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                  className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1 hover:border-[var(--accent-primary)] transition-colors"
+                >
                   <span className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] block">05</span>
                   <span className="text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">Live Websites</span>
                   <span className="text-[11px] text-[var(--text-muted)] font-sans">Active client portals</span>
-                </div>
+                </motion.div>
 
-                <div className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1">
+                <motion.div 
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                  className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1 hover:border-[var(--accent-primary)] transition-colors"
+                >
                   <span className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] block">₹250+ Cr</span>
                   <span className="text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">Scope Handled</span>
                   <span className="text-[11px] text-[var(--text-muted)] font-sans">Real-estate transactions</span>
-                </div>
+                </motion.div>
 
-                <div className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1">
+                <motion.div 
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                  className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1 hover:border-emerald-500 transition-colors"
+                >
                   <span className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] block">100%</span>
                   <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">Client Deployed</span>
                   <span className="text-[11px] text-[var(--text-muted)] font-sans">Production releases</span>
-                </div>
+                </motion.div>
 
-                <div className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1">
+                <motion.div 
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                  className="p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-1 hover:border-emerald-500 transition-colors"
+                >
                   <span className="text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] block">&lt;24h</span>
                   <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">Response SLA</span>
                   <span className="text-[11px] text-[var(--text-muted)] font-sans">Fast collaboration</span>
-                </div>
+                </motion.div>
               </div>
 
             </div>
@@ -179,7 +196,11 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-3 hover:border-[var(--accent-primary)] transition-colors">
+              <motion.div 
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.2 }}
+                className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-3 hover:border-[var(--accent-primary)] transition-all"
+              >
                 <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
                   <Palette className="w-5 h-5" />
                 </div>
@@ -187,9 +208,13 @@ export const HomePage: React.FC = () => {
                 <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
                   Translating complex business requirements into intuitive Figma mockups, accessible visual hierarchies, and high-conversion user journeys.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-3 hover:border-[var(--accent-primary)] transition-colors">
+              <motion.div 
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.2 }}
+                className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-3 hover:border-[var(--accent-primary)] transition-all"
+              >
                 <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
                   <Code2 className="w-5 h-5" />
                 </div>
@@ -197,9 +222,13 @@ export const HomePage: React.FC = () => {
                 <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
                   Engineering component-driven web apps with React 19, strict TypeScript interfaces, Tailwind CSS tokens, and sub-second Vite builds.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-3 hover:border-[var(--accent-primary)] transition-colors">
+              <motion.div 
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.2 }}
+                className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs space-y-3 hover:border-[var(--accent-primary)] transition-all"
+              >
                 <div className="w-10 h-10 rounded-xl bg-[var(--accent-emerald-soft)] text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
                   <Layers className="w-5 h-5" />
                 </div>
@@ -207,7 +236,7 @@ export const HomePage: React.FC = () => {
                 <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
                   Extending web presence into functional operations: lead triage consoles, WhatsApp booking triggers, and responsive dispatch portals.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>

@@ -133,7 +133,7 @@ export const ContactSection: React.FC = () => {
                   className="flex items-center justify-between p-4 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] hover:border-[var(--accent-primary)] transition-all group shadow-xs"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold">
+                    <div className="w-9 h-9 rounded-xl bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
                       <LinkedinIcon className="w-4 h-4" />
                     </div>
                     <div>

@@ -6,7 +6,7 @@ import { ProjectCard } from '../components/ProjectCard';
 import { ProjectModal } from '../components/ProjectModal';
 import { PageTransition } from '../components/PageTransition';
 import { ShieldCheck } from 'lucide-react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export const WorkPage: React.FC = () => {
   useDocumentTitle('Selected Work & Case Studies');
@@ -47,7 +47,7 @@ export const WorkPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Category Filter Bar */}
+          {/* Category Filter Bar with Animated Sliding Pill */}
           <div className="flex items-center justify-between flex-wrap gap-4 mb-10 font-mono text-xs">
             <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 no-scrollbar">
               {projectCategories.map((category) => {
@@ -61,15 +61,23 @@ export const WorkPage: React.FC = () => {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-2 font-bold focus:outline-none shadow-xs ${
-                      isActive
-                        ? 'bg-[var(--accent-primary)] text-white shadow-xs'
-                        : 'bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] border border-[var(--border-color)]'
-                    }`}
+                    className="relative px-4 py-2 rounded-xl transition-colors duration-150 flex items-center gap-2 font-bold focus:outline-none"
                     aria-pressed={isActive}
                   >
-                    <span>{category}</span>
-                    <span className={`px-1.5 py-0.5 rounded-full text-[10px] ${
+                    {isActive ? (
+                      <motion.div
+                        layoutId="workCategoryPill"
+                        transition={{ type: 'spring', bounce: 0.2, duration: 0.35 }}
+                        className="absolute inset-0 bg-[var(--accent-primary)] rounded-xl shadow-xs z-0"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-xl z-0" />
+                    )}
+
+                    <span className={`relative z-10 ${isActive ? 'text-white' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`}>
+                      {category}
+                    </span>
+                    <span className={`relative z-10 px-1.5 py-0.5 rounded-full text-[10px] ${
                       isActive ? 'bg-white/20 text-white' : 'bg-[var(--bg-secondary)] text-[var(--text-muted)]'
                     }`}>
                       {count}

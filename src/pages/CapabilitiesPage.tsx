@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { SkillsSection } from '../components/SkillsSection';
+import { CodeInspector } from '../components/CodeInspector';
 import { AdminShowcase } from '../components/AdminShowcase';
 import { PageTransition } from '../components/PageTransition';
 
@@ -39,7 +40,12 @@ export const CapabilitiesPage: React.FC = () => {
             <SkillsSection />
           </div>
 
-          {/* 2. Integrated Behind-The-Scenes CRM & Operations Showcase */}
+          {/* 2. Interactive Production Architecture & Code Inspector */}
+          <div className="mb-20">
+            <CodeInspector />
+          </div>
+
+          {/* 3. Integrated Behind-The-Scenes CRM & Operations Showcase */}
           <div className="mb-20">
             <AdminShowcase />
           </div>

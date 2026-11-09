@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
               href="https://www.linkedin.com/in/fazilarshiya"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[#0A66C2] hover:border-[#0A66C2] flex items-center justify-center transition-colors shadow-xs"
+              className="w-9 h-9 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--accent-primary)] hover:border-[var(--accent-primary)] flex items-center justify-center transition-colors shadow-xs"
               aria-label="LinkedIn Profile"
             >
               <LinkedinIcon className="w-4 h-4" />

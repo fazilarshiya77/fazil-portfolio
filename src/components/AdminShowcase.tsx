@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { sampleAdminLeads, adminCapabilities, type AdminLead } from '../data/adminData';
 import { Search, TrendingUp, Clock, ShieldCheck, LayoutDashboard, Users, Layers, BarChart3, Smartphone } from 'lucide-react';
 
@@ -122,19 +123,29 @@ export const AdminShowcase: React.FC = () => {
           {/* Filter Bar & Search */}
           <div className="p-6 border-b border-[var(--border-color)] bg-[var(--bg-primary)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs">
             <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
-              {(['all', 'New', 'In Progress', 'Contacted', 'Closed'] as const).map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-3.5 py-1.5 rounded-xl font-bold uppercase tracking-wider transition-all duration-150 ${
-                    activeTab === tab
-                      ? 'bg-[var(--accent-primary)] text-white shadow-xs'
-                      : 'border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-                  }`}
-                >
-                  {tab === 'all' ? 'All Inquiries' : tab}
-                </button>
-              ))}
+              {(['all', 'New', 'In Progress', 'Contacted', 'Closed'] as const).map((tab) => {
+                const isActive = activeTab === tab;
+                return (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className="relative px-3.5 py-1.5 rounded-xl font-bold uppercase tracking-wider transition-colors duration-150 focus:outline-none"
+                  >
+                    {isActive ? (
+                      <motion.div
+                        layoutId="adminTabPill"
+                        transition={{ type: 'spring', bounce: 0.2, duration: 0.35 }}
+                        className="absolute inset-0 bg-[var(--accent-primary)] rounded-xl shadow-xs z-0"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-xl z-0" />
+                    )}
+                    <span className={`relative z-10 ${isActive ? 'text-white' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`}>
+                      {tab === 'all' ? 'All Inquiries' : tab}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
 
             <div className="relative min-w-[260px]">
@@ -195,12 +206,12 @@ export const AdminShowcase: React.FC = () => {
                         <span
                           className={`px-2.5 py-1 rounded-lg border ${
                             lead.status === 'New'
-                              ? 'border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-400'
+                              ? 'border-[var(--accent-primary)]/40 bg-[var(--accent-primary-soft)] text-[var(--accent-primary)]'
                               : lead.status === 'In Progress'
-                              ? 'border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400'
+                              ? 'border-amber-400/40 bg-amber-500/10 text-amber-700 dark:text-amber-400'
                               : lead.status === 'Contacted'
-                              ? 'border-sky-200 dark:border-sky-800 bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-400'
-                              : 'border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400'
+                              ? 'border-stone-400/40 bg-stone-500/10 text-stone-700 dark:text-stone-300'
+                              : 'border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400'
                           }`}
                         >
                           {lead.status}
