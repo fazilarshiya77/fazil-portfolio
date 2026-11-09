@@ -66,14 +66,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           {/* Modal Header */}
           <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--border-color)] bg-[var(--bg-primary)]">
             <div className="flex items-center gap-3">
-              <span className="font-mono text-xs font-bold text-white bg-[var(--accent-primary)] px-3 py-1 rounded-lg">
+              <span className="font-sans text-xs font-bold text-white bg-[var(--accent-primary)] px-3 py-1 rounded-lg">
                 CASE {project.number}
               </span>
               <div>
                 <h3 className="font-heading text-xl font-bold text-[var(--text-primary)]">
                   {project.title}
                 </h3>
-                <span className="font-mono text-xs text-[var(--text-secondary)]">
+                <span className="font-sans text-xs text-[var(--text-secondary)]">
                   {project.categoryLabel} • {currentIndex + 1} of {projectsData.length}
                 </span>
               </div>
@@ -82,7 +82,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
             {/* Quick Actions Header: Prev/Next & Close */}
             <div className="flex items-center gap-2">
               {onSelectProject && (
-                <div className="flex items-center gap-1 font-mono text-xs text-[var(--text-secondary)]">
+                <div className="flex items-center gap-1 font-sans text-xs text-[var(--text-secondary)]">
                   <button
                     onClick={handlePrev}
                     title="Previous case (Left Arrow)"
@@ -121,12 +121,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                 className="w-full h-auto object-cover max-h-[380px]"
                 loading="lazy"
               />
-              <div className="px-5 py-3 bg-[var(--bg-surface)] border-t border-[var(--border-color)] font-mono text-xs text-[var(--text-secondary)] flex items-center justify-between">
+              <div className="px-5 py-3 bg-[var(--bg-surface)] border-t border-[var(--border-color)] font-sans text-xs text-[var(--text-secondary)] flex items-center justify-between">
                 <span className="flex items-center gap-1.5 font-bold text-[var(--text-primary)]">
                   <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                   Verified Production Interface from Client Deployment
                 </span>
-                <span className="text-emerald-600 dark:text-emerald-400 font-semibold font-mono">
+                <span className="text-emerald-600 dark:text-emerald-400 font-semibold font-sans">
                   ● 100% Active Server
                 </span>
               </div>
@@ -134,7 +134,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
 
             {/* Scope & Overview */}
             <div className="space-y-2">
-              <span className="font-mono text-xs uppercase tracking-wider text-[var(--accent-primary)] font-bold block">
+              <span className="font-sans text-xs uppercase tracking-wider text-[var(--accent-primary)] font-bold block">
                 01 / Project Scope &amp; Commercial Context
               </span>
               <p className="text-base text-[var(--text-secondary)] leading-relaxed">
@@ -148,7 +148,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               {/* Left Column: Engineering & Features */}
               <div className="space-y-6">
                 <div className="p-5 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
-                  <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3 flex items-center gap-2">
+                  <h4 className="font-sans text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[var(--accent-primary)]" />
                     <span>Engineering Deliverables</span>
                   </h4>
@@ -163,7 +163,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                 </div>
 
                 <div className="p-5 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
-                  <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3 flex items-center gap-2">
+                  <h4 className="font-sans text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3 flex items-center gap-2">
                     <Layers className="w-4 h-4 text-[var(--accent-primary)]" />
                     <span>Key Features &amp; Workflows</span>
                   </h4>
@@ -181,7 +181,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               {/* Right Column: Design Highlights & Tech Stack */}
               <div className="space-y-6">
                 <div className="p-5 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
-                  <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3 flex items-center gap-2">
+                  <h4 className="font-sans text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3 flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-[var(--accent-primary)]" />
                     <span>Design Systems &amp; Visual Identity</span>
                   </h4>
@@ -196,14 +196,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                 </div>
 
                 <div className="p-5 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
-                  <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3">
+                  <h4 className="font-sans text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3">
                     Technology Tokens &amp; Libraries
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="font-mono text-xs font-semibold px-3 py-1 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-primary)]"
+                        className="font-sans text-xs font-semibold px-3 py-1 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-primary)]"
                       >
                         {tag}
                       </span>
@@ -217,7 +217,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           </div>
 
           {/* Modal Action Bar */}
-          <div className="px-6 py-4 border-t border-[var(--border-color)] bg-[var(--bg-primary)] flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+          <div className="px-6 py-4 border-t border-[var(--border-color)] bg-[var(--bg-primary)] flex flex-wrap items-center justify-between gap-4 font-sans text-xs">
             <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
               {onSelectProject && (
                 <div className="flex items-center gap-2">

@@ -124,7 +124,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
           </div>
 
           {/* Results List */}
-          <div className="max-h-[60vh] overflow-y-auto p-2 space-y-4 text-xs font-mono">
+          <div className="max-h-[60vh] overflow-y-auto p-2 space-y-4 text-xs font-sans">
             
             {/* Quick Actions */}
             <div>
@@ -226,7 +226,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
           </div>
 
           {/* Command Palette Footer */}
-          <div className="px-4 py-2.5 border-t border-[var(--border-color)] bg-[var(--bg-primary)] flex items-center justify-between font-mono text-[10px] text-[var(--text-muted)]">
+          <div className="px-4 py-2.5 border-t border-[var(--border-color)] bg-[var(--bg-primary)] flex items-center justify-between font-sans text-[10px] text-[var(--text-muted)]">
             <span>Navigation shortcut</span>
             <div className="flex items-center gap-2">
               <span className="px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--bg-surface)]">ESC</span>

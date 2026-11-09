@@ -75,7 +75,7 @@ export async function dispatchLeadNotification(lead: AdminLead) {
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex items-center gap-1 font-mono text-xs">
+        <div className="flex items-center gap-1 font-sans text-xs">
           <button
             onClick={() => setActiveSnippet('types')}
             className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
@@ -113,7 +113,7 @@ export async function dispatchLeadNotification(lead: AdminLead) {
         {/* Copy Button */}
         <button
           onClick={handleCopy}
-          className="flex items-center gap-1.5 px-3 py-1 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] hover:border-[var(--accent-primary)] text-xs font-mono font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] hover:border-[var(--accent-primary)] text-xs font-sans font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
         >
           {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
           <span>{copied ? 'Copied' : 'Copy'}</span>
@@ -137,7 +137,7 @@ export async function dispatchLeadNotification(lead: AdminLead) {
       </div>
 
       {/* Footer Specs */}
-      <div className="px-5 py-2.5 border-t border-[var(--border-color)] bg-[var(--bg-secondary)]/30 flex items-center justify-between font-mono text-[11px] text-[var(--text-muted)]">
+      <div className="px-5 py-2.5 border-t border-[var(--border-color)] bg-[var(--bg-secondary)]/30 flex items-center justify-between font-sans text-[11px] text-[var(--text-muted)]">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-500" />
           <span>Deterministic Type Safety</span>

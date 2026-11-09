@@ -85,7 +85,7 @@ export const Navbar: React.FC = () => {
                   <span>Fazil Arshiya</span>
                   <SparkleStar size={12} className="text-[#B8B0EA]" />
                 </span>
-                <span className="text-[10px] font-mono text-[var(--text-muted)] tracking-wider">
+                <span className="text-[10px] font-sans font-medium text-[var(--text-muted)]">
                   Product Designer &amp; Dev
                 </span>
               </div>
@@ -115,12 +115,12 @@ export const Navbar: React.FC = () => {
               {/* Cmd+K Search Trigger */}
               <button
                 onClick={() => setCommandPaletteOpen(true)}
-                className="hidden lg:flex items-center gap-2 px-2.5 py-1 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)] text-xs font-mono transition-colors shadow-xs"
+                className="hidden lg:flex items-center gap-2 px-2.5 py-1 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)] text-xs font-sans transition-colors shadow-xs"
                 title="Quick Command Palette (Ctrl+K or ⌘K)"
               >
                 <Search className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
-                <span className="text-[11px]">Search</span>
-                <kbd className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--bg-secondary)] border border-[var(--border-color)] font-mono">
+                <span className="text-[11px] font-medium">Search</span>
+                <kbd className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--bg-secondary)] border border-[var(--border-color)] font-sans font-medium">
                   ⌘K
                 </kbd>
               </button>
@@ -226,7 +226,7 @@ export const Navbar: React.FC = () => {
                     setMobileMenuOpen(false);
                     setCommandPaletteOpen(true);
                   }}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-primary)] text-xs font-mono font-bold"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-primary)] text-xs font-sans font-semibold"
                 >
                   <Search className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
                   <span>Search &amp; Jump (⌘K)</span>

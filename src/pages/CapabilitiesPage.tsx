@@ -26,7 +26,7 @@ export const CapabilitiesPage: React.FC = () => {
             </div>
 
             <div className="relative z-10 max-w-3xl">
-              <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[#2D2320]/70 dark:text-[#FFF0EB]/70 mb-2">
+              <div className="flex flex-wrap items-center gap-2 font-sans text-xs text-[#2D2320]/70 dark:text-[#FFF0EB]/70 mb-2">
                 <Link to="/" className="hover:underline">Home</Link>
                 <span>/</span>
                 <span className="font-bold text-[#7562E0] dark:text-[#9D8DF8]">Capabilities &amp; Systems</span>
@@ -62,7 +62,7 @@ export const CapabilitiesPage: React.FC = () => {
           {/* Next Steps Navigation Bar */}
           <div className="p-8 rounded-2xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)] flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xs">
             <div className="space-y-1">
-              <span className="font-mono text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">
+              <span className="font-sans text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">
                 Next in the Experience
               </span>
               <h3 className="font-heading text-xl sm:text-2xl font-bold text-[var(--text-primary)] tracking-tight">
@@ -75,7 +75,7 @@ export const CapabilitiesPage: React.FC = () => {
 
             <Link
               to="/process"
-              className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold font-mono text-xs uppercase tracking-wider shadow-xs transition-all"
+              className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold font-sans text-xs uppercase tracking-wider shadow-xs transition-all"
             >
               <span>Explore Process →</span>
             </Link>

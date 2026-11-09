@@ -19,7 +19,7 @@ export const ProjectGrid: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 sm:mb-16 border-b border-[var(--border-color)]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-sans font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
               <span>02</span>
               <span>/</span>
               <span>Selected Work</span>
@@ -38,7 +38,7 @@ export const ProjectGrid: React.FC = () => {
         </div>
 
         {/* Category Filters Bar */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-6 mb-12 no-scrollbar font-mono text-xs">
+        <div className="flex items-center gap-2 overflow-x-auto pb-6 mb-12 no-scrollbar font-sans text-xs">
           {projectCategories.map((category) => {
             const count = category === 'All Projects'
               ? projectsData.length
@@ -83,7 +83,7 @@ export const ProjectGrid: React.FC = () => {
         </div>
 
         {/* Bottom Colophon Callout */}
-        <div className="mt-20 p-8 rounded-2xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs text-[var(--text-secondary)]">
+        <div className="mt-20 p-8 rounded-2xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans text-xs text-[var(--text-secondary)]">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="font-bold text-[var(--text-primary)]">All 5 deployments link directly to active client servers</span>

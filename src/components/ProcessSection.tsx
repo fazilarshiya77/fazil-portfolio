@@ -12,7 +12,7 @@ export const ProcessSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-[var(--border-color)]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-sans font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
               <span>01</span>
               <span>/</span>
               <span>Methodology &amp; Execution</span>
@@ -57,10 +57,10 @@ export const ProcessSection: React.FC = () => {
                 <div className="space-y-4">
                   {/* Number Badge */}
                   <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
-                    <div className={`w-10 h-10 rounded-2xl ${badgeBg} flex items-center justify-center font-mono font-black text-sm shadow-xs`}>
+                    <div className={`w-10 h-10 rounded-2xl ${badgeBg} flex items-center justify-center font-sans font-black text-sm shadow-xs`}>
                       {step.step}
                     </div>
-                    <span className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                    <span className="font-sans text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
                       Stage 0{idx + 1}
                     </span>
                   </div>
@@ -69,7 +69,7 @@ export const ProcessSection: React.FC = () => {
                     {step.title}
                   </h3>
 
-                  <p className="text-xs font-mono text-[var(--accent-primary)] font-semibold">
+                  <p className="text-xs font-sans text-[var(--accent-primary)] font-semibold">
                     {step.tagline}
                   </p>
 
@@ -80,7 +80,7 @@ export const ProcessSection: React.FC = () => {
 
                 {/* Tangible Outputs */}
                 <div className="pt-4 border-t border-[var(--border-color)] space-y-2.5">
-                  <span className="block font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)] font-bold">
+                  <span className="block font-sans text-[10px] uppercase tracking-wider text-[var(--text-muted)] font-bold">
                     Key Deliverables
                   </span>
                   <ul className="space-y-2 text-xs text-[var(--text-secondary)] font-medium">
@@ -98,7 +98,7 @@ export const ProcessSection: React.FC = () => {
         </div>
 
         {/* Methodology Colophon */}
-        <div className="mt-12 pt-6 border-t border-[var(--border-color)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs text-[var(--text-secondary)]">
+        <div className="mt-12 pt-6 border-t border-[var(--border-color)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans text-xs text-[var(--text-secondary)]">
           <span className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="font-bold text-[var(--text-primary)]">Validated in 5 Commercial Deployments</span>

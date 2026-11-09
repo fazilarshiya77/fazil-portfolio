@@ -28,7 +28,7 @@ export const SkillsSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-10 border-b border-[var(--border-color)]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-sans font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
               <span>01</span>
               <span>/</span>
               <span>Capabilities &amp; Stack</span>
@@ -47,7 +47,7 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Category Filters Bar with Sliding Pill */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar font-mono text-xs">
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar font-sans text-xs">
           <button
             onClick={() => setSelectedCategoryId('all')}
             className="relative px-4 py-2 rounded-xl transition-colors duration-150 flex items-center gap-2 font-bold focus:outline-none"
@@ -120,7 +120,7 @@ export const SkillsSection: React.FC = () => {
                         {category.name}
                       </h3>
                     </div>
-                    <span className="font-mono text-xs font-semibold px-2 py-0.5 rounded-md bg-[var(--bg-secondary)] text-[var(--text-secondary)]">
+                    <span className="font-sans text-xs font-semibold px-2 py-0.5 rounded-md bg-[var(--bg-secondary)] text-[var(--text-secondary)]">
                       {category.skills.length} Items
                     </span>
                   </div>
@@ -144,7 +144,7 @@ export const SkillsSection: React.FC = () => {
                             <span>{skill.name}</span>
                           </span>
                           {skill.isHighlight && (
-                            <span className="font-mono text-[10px] uppercase font-bold text-[var(--accent-primary)] px-2 py-0.5 rounded bg-[var(--accent-primary-soft)]">
+                            <span className="font-sans text-[10px] uppercase font-bold text-[var(--accent-primary)] px-2 py-0.5 rounded bg-[var(--accent-primary-soft)]">
                               Core
                             </span>
                           )}
@@ -159,7 +159,7 @@ export const SkillsSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[var(--border-color)] flex items-center justify-between font-mono text-xs text-[var(--text-muted)]">
+                <div className="mt-6 pt-4 border-t border-[var(--border-color)] flex items-center justify-between font-sans text-xs text-[var(--text-muted)]">
                   <span>Applied in Production</span>
                   <span className="text-emerald-600 dark:text-emerald-400 font-bold">100% Deployed</span>
                 </div>
@@ -171,7 +171,7 @@ export const SkillsSection: React.FC = () => {
         {/* Thoughtful AI Philosophy Callout Banner */}
         <div className="mt-12 p-6 sm:p-8 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xs">
           <div className="space-y-1.5 max-w-3xl">
-            <span className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--accent-primary)] block">
+            <span className="font-sans text-xs font-bold uppercase tracking-wider text-[var(--accent-primary)] block">
               Perspective / Engineering Philosophy
             </span>
             <h4 className="font-heading text-xl font-bold text-[var(--text-primary)] tracking-tight">
@@ -182,7 +182,7 @@ export const SkillsSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="shrink-0 px-4 py-2 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] font-mono text-xs font-bold text-[var(--accent-primary)] shadow-xs">
+          <div className="shrink-0 px-4 py-2 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] font-sans text-xs font-bold text-[var(--accent-primary)] shadow-xs">
             Accelerated Delivery
           </div>
         </div>

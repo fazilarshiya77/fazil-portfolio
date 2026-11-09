@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-mono text-xs sm:text-sm font-semibold text-[#1E1B29] dark:text-[#F8F6FF] flex items-center gap-2 cursor-default"
+          className="font-sans text-xs sm:text-sm font-semibold tracking-normal text-[#1E1B29] dark:text-[#F8F6FF] flex items-center gap-2 cursor-default"
         >
           <span>13 July, 2026</span>
           <ArrowRight className="w-4 h-4 text-[#1E1B29] dark:text-[#F8F6FF]" />
@@ -103,7 +103,7 @@ export const Hero: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.35 }}
         className="w-full z-10 pt-4 flex flex-wrap items-center justify-between gap-y-4 gap-x-6 text-[#1E1B29] dark:text-[#F8F6FF]"
       >
-        <div className="flex flex-wrap items-center gap-6 sm:gap-10 font-mono text-xs sm:text-sm">
+        <div className="flex flex-wrap items-center gap-6 sm:gap-10 font-sans text-xs sm:text-sm font-medium">
           
           {/* LinkedIn Pill */}
           <a
@@ -166,7 +166,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Scroll Hint / Live Deployments Indicator */}
-        <div className="font-mono text-xs font-bold text-[#1E1B29]/80 dark:text-[#F8F6FF]/80 flex items-center gap-2 ml-auto">
+        <div className="font-sans text-xs font-semibold text-[#1E1B29]/80 dark:text-[#F8F6FF]/80 flex items-center gap-2 ml-auto">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span>5 Production Client Deployments</span>
         </div>

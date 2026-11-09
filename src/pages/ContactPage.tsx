@@ -24,7 +24,7 @@ export const ContactPage: React.FC = () => {
             </div>
 
             <div className="relative z-10 max-w-2xl">
-              <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[#232035]/80 dark:text-[#F8F6FF]/80 mb-2">
+              <div className="flex flex-wrap items-center gap-2 font-sans text-xs text-[#232035]/80 dark:text-[#F8F6FF]/80 mb-2">
                 <Link to="/" className="hover:underline">Home</Link>
                 <span>/</span>
                 <span className="font-bold text-[#232035] dark:text-white">Contact</span>

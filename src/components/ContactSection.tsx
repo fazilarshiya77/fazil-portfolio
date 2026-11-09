@@ -50,7 +50,7 @@ export const ContactSection: React.FC = () => {
         {/* Section Header */}
         <div className="relative flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-[var(--border-color)]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-sans font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Initiate Conversation</span>
             </div>
@@ -77,22 +77,22 @@ export const ContactSection: React.FC = () => {
           {/* Left Column: Direct Links & Email Copier */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-4">
-              <span className="font-mono text-xs uppercase tracking-wider text-[var(--text-muted)] font-bold block">
+              <span className="font-sans text-xs uppercase tracking-wider text-[var(--text-muted)] font-bold block">
                 Direct Channels &amp; Profiles
               </span>
 
               {/* Email Copier */}
               <div className="p-5 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] space-y-2 shadow-xs">
-                <span className="text-[10px] uppercase font-mono tracking-wider text-[var(--accent-primary)] font-bold block">
+                <span className="text-[10px] uppercase font-sans tracking-wider text-[var(--accent-primary)] font-bold block">
                   Primary Email Address
                 </span>
                 <div className="flex items-center justify-between gap-3">
-                  <span className="font-mono text-xs sm:text-sm text-[var(--text-primary)] select-all truncate font-semibold">
+                  <span className="font-sans text-xs sm:text-sm text-[var(--text-primary)] select-all truncate font-semibold">
                     {emailAddress}
                   </span>
                   <button
                     onClick={handleCopyEmail}
-                    className="shrink-0 px-3.5 py-1.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:bg-[var(--accent-primary)] hover:text-white hover:border-[var(--accent-primary)] text-xs font-mono font-bold text-[var(--text-secondary)] flex items-center gap-1.5 transition-all focus:outline-none"
+                    className="shrink-0 px-3.5 py-1.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:bg-[var(--accent-primary)] hover:text-white hover:border-[var(--accent-primary)] text-xs font-sans font-bold text-[var(--text-secondary)] flex items-center gap-1.5 transition-all focus:outline-none"
                     aria-label="Copy email address"
                   >
                     {copied ? (
@@ -122,7 +122,7 @@ export const ContactSection: React.FC = () => {
                     </div>
                     <div>
                       <span className="text-sm font-bold text-[var(--text-primary)] block">Direct Email</span>
-                      <span className="font-mono text-[11px] text-[var(--text-muted)]">Opens your default email client</span>
+                      <span className="font-sans text-[11px] text-[var(--text-muted)]">Opens your default email client</span>
                     </div>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[var(--text-muted)] group-hover:text-[var(--accent-primary)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -140,7 +140,7 @@ export const ContactSection: React.FC = () => {
                     </div>
                     <div>
                       <span className="text-sm font-bold text-[var(--text-primary)] block">LinkedIn Profile</span>
-                      <span className="font-mono text-[11px] text-[var(--text-muted)]">linkedin.com/in/fazilarshiya</span>
+                      <span className="font-sans text-[11px] text-[var(--text-muted)]">linkedin.com/in/fazilarshiya</span>
                     </div>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[var(--text-muted)] group-hover:text-[var(--accent-primary)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -158,7 +158,7 @@ export const ContactSection: React.FC = () => {
                     </div>
                     <div>
                       <span className="text-sm font-bold text-[var(--text-primary)] block">GitHub Repositories</span>
-                      <span className="font-mono text-[11px] text-[var(--text-muted)]">github.com/fazilarshiya77</span>
+                      <span className="font-sans text-[11px] text-[var(--text-muted)]">github.com/fazilarshiya77</span>
                     </div>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[var(--text-muted)] group-hover:text-[var(--accent-primary)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -167,7 +167,7 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Timezone Note */}
-            <div className="p-4 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] font-mono text-xs text-[var(--text-secondary)] space-y-1 shadow-xs">
+            <div className="p-4 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] font-sans text-xs text-[var(--text-secondary)] space-y-1 shadow-xs">
               <span className="text-[10px] uppercase font-bold tracking-wider text-[var(--accent-primary)] block">
                 Timezone &amp; Response SLA
               </span>
@@ -180,7 +180,7 @@ export const ContactSection: React.FC = () => {
           {/* Right Column: Quick Inquiries Composer */}
           <div className="lg:col-span-7">
             <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-6 sm:p-8 shadow-xs space-y-6">
-              <div className="flex items-center justify-between pb-4 border-b border-[var(--border-color)] font-mono text-xs">
+              <div className="flex items-center justify-between pb-4 border-b border-[var(--border-color)] font-sans text-xs">
                 <div className="flex items-center gap-2 text-[var(--text-primary)] font-bold">
                   <MessageSquare className="w-4 h-4 text-[var(--accent-primary)]" />
                   <span>Inquiry Dispatch Composer</span>
@@ -188,7 +188,7 @@ export const ContactSection: React.FC = () => {
                 <span className="text-emerald-600 dark:text-emerald-400 font-semibold">● Form Ready</span>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4 text-xs font-mono">
+              <form onSubmit={handleSubmit} className="space-y-4 text-xs font-sans">
                 <div>
                   <label className="block text-[11px] uppercase tracking-wider text-[var(--text-secondary)] mb-1.5 font-bold">
                     Your Name / Organization
@@ -261,7 +261,7 @@ export const ContactSection: React.FC = () => {
                       initial={{ opacity: 0, y: -4 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
-                      className="p-3.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-center text-xs font-mono font-bold"
+                      className="p-3.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-center text-xs font-sans font-semibold"
                     >
                       ✓ Formatted payload launched in your email application.
                     </motion.div>

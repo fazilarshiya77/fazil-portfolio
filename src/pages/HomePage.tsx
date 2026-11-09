@@ -47,7 +47,7 @@ export const HomePage: React.FC = () => {
                 {/* Header with Organic Badge */}
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <span className="font-mono text-xs uppercase tracking-wider text-[#2D2320]/70 dark:text-[#FFF0EB]/70 font-bold block mb-1">
+                    <span className="font-sans text-xs uppercase tracking-wider text-[#2D2320]/70 dark:text-[#FFF0EB]/70 font-bold block mb-1">
                       01 / About Me
                     </span>
                     <h3 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -69,17 +69,17 @@ export const HomePage: React.FC = () => {
                 </p>
 
                 {/* Tool Badges */}
-                <div className="flex flex-wrap items-center gap-2 pt-2 font-mono text-xs">
-                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-bold shadow-xs">
+                <div className="flex flex-wrap items-center gap-2 pt-2 font-sans text-xs">
+                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-semibold shadow-xs">
                     Figma
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-bold shadow-xs">
+                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-semibold shadow-xs">
                     React 19
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-bold shadow-xs">
+                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-semibold shadow-xs">
                     TypeScript
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-bold shadow-xs">
+                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-semibold shadow-xs">
                     Tailwind CSS
                   </span>
                 </div>
@@ -88,13 +88,13 @@ export const HomePage: React.FC = () => {
 
               {/* Bottom Row Navigation */}
               <div className="relative z-10 pt-8 mt-6 border-t border-[#2D2320]/15 dark:border-white/10 flex items-center justify-between">
-                <span className="font-mono text-xs text-[#2D2320]/70 dark:text-[#FFF0EB]/70">
+                <span className="font-sans text-xs text-[#2D2320]/70 dark:text-[#FFF0EB]/70 font-medium">
                   📍 Bengaluru, India
                 </span>
 
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#2D2320] text-white hover:bg-black transition-all font-mono text-xs font-bold shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#2D2320] text-white hover:bg-black transition-all font-sans text-xs font-semibold shadow-sm"
                 >
                   <span>Full Story</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -118,7 +118,7 @@ export const HomePage: React.FC = () => {
 
               <div className="relative z-10 space-y-6">
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-wider text-[#232035]/70 dark:text-[#F8F6FF]/70 font-bold block mb-1">
+                  <span className="font-sans text-xs uppercase tracking-wider text-[#232035]/70 dark:text-[#F8F6FF]/70 font-bold block mb-1">
                     02 / Capabilities &amp; Operations
                   </span>
                   <h3 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -131,14 +131,14 @@ export const HomePage: React.FC = () => {
                 </p>
 
                 {/* Perspective Metric Indicators */}
-                <div className="grid grid-cols-2 gap-3 font-mono text-xs pt-1">
+                <div className="grid grid-cols-2 gap-3 font-sans text-xs pt-1">
                   <div className="p-3.5 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-xs">
                     <span className="text-2xl font-black block text-[#232035] dark:text-white">05</span>
-                    <span className="text-[11px] font-bold text-[#232035]/80 dark:text-white/80">Active Websites</span>
+                    <span className="text-[11px] font-semibold text-[#232035]/80 dark:text-white/80">Active Websites</span>
                   </div>
                   <div className="p-3.5 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-xs">
                     <span className="text-2xl font-black block text-[#232035] dark:text-white">&lt;24h</span>
-                    <span className="text-[11px] font-bold text-[#232035]/80 dark:text-white/80">Response SLA</span>
+                    <span className="text-[11px] font-semibold text-[#232035]/80 dark:text-white/80">Response SLA</span>
                   </div>
                 </div>
 
@@ -146,13 +146,13 @@ export const HomePage: React.FC = () => {
 
               {/* Bottom Row Navigation */}
               <div className="relative z-10 pt-8 mt-6 border-t border-white/20 dark:border-white/10 flex items-center justify-between">
-                <span className="font-mono text-xs text-[#232035]/70 dark:text-[#F8F6FF]/70">
+                <span className="font-sans text-xs text-[#232035]/70 dark:text-[#F8F6FF]/70 font-medium">
                   Interactive CRM Console Active
                 </span>
 
                 <Link
                   to="/capabilities"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#232035] hover:bg-white/90 transition-all font-mono text-xs font-bold shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#232035] hover:bg-white/90 transition-all font-sans text-xs font-semibold shadow-sm"
                 >
                   <span>Explore Stack</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -168,7 +168,7 @@ export const HomePage: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[var(--border-color)]">
             <div className="space-y-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] shadow-xs">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-sans font-bold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] shadow-xs">
                 <span>03 / Commercial Showcase</span>
               </div>
               <h2 className="font-heading text-3xl sm:text-5xl font-black text-[var(--text-primary)] tracking-tight">
@@ -178,7 +178,7 @@ export const HomePage: React.FC = () => {
 
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 font-mono text-xs font-bold text-[var(--accent-primary)] hover:underline"
+              className="inline-flex items-center gap-2 font-sans text-xs font-bold text-[var(--accent-primary)] hover:underline"
             >
               <span>Explore All 5 Case Studies</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -220,7 +220,7 @@ export const HomePage: React.FC = () => {
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
               
               <div className="space-y-4 max-w-xl">
-                <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#232035]/80 dark:text-white/80 block">
+                <span className="font-sans text-xs font-bold uppercase tracking-wider text-[#232035]/80 dark:text-white/80 block">
                   Available for 2026 Collaborations
                 </span>
 
@@ -237,7 +237,7 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Direct Quick Action CTAs */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0 font-mono text-xs">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0 font-sans text-xs">
                 <Link
                   to="/contact"
                   className="px-6 py-4 rounded-full bg-[#232035] text-white hover:bg-black font-bold tracking-wider uppercase text-center shadow-lg transition-all"

@@ -70,7 +70,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
             <motion.span 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[var(--bg-surface)] text-[var(--text-primary)] font-mono text-xs font-bold shadow-lg"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[var(--bg-surface)] text-[var(--text-primary)] font-sans text-xs font-semibold shadow-lg"
             >
               <Eye className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
               <span>Inspect Case Dossier</span>
@@ -80,7 +80,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
 
         {/* Content Details */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="flex items-center justify-between font-mono text-xs text-[var(--text-muted)]">
+          <div className="flex items-center justify-between font-sans text-xs text-[var(--text-muted)]">
             <div className="flex items-center gap-2">
               <span className="font-bold text-[var(--accent-primary)]">{project.number}</span>
               <span>/</span>
@@ -116,7 +116,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
             {project.tags.slice(0, 4).map((tag) => (
               <span
                 key={tag}
-                className="font-mono text-[11px] font-medium px-2.5 py-0.5 rounded-md border border-[var(--border-color)] bg-[var(--bg-secondary)]/60 text-[var(--text-secondary)]"
+                className="font-sans text-[11px] font-medium px-2.5 py-0.5 rounded-md border border-[var(--border-color)] bg-[var(--bg-secondary)]/60 text-[var(--text-secondary)]"
               >
                 {tag}
               </span>
@@ -124,7 +124,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
           </div>
 
           {/* Action Row */}
-          <div className="pt-4 border-t border-[var(--border-color)] flex flex-wrap items-center gap-3 font-mono text-xs">
+          <div className="pt-4 border-t border-[var(--border-color)] flex flex-wrap items-center gap-3 font-sans text-xs">
             <motion.a
               whileHover={{ scale: 1.03, y: -1 }}
               whileTap={{ scale: 0.97 }}

@@ -28,14 +28,14 @@ export const Footer: React.FC = () => {
                 <span>Fazil Arshiya</span>
                 <SparkleStar size={16} className="text-[#B8B0EA]" />
               </span>
-              <p className="font-mono text-xs text-[var(--text-secondary)]">
+              <p className="font-sans text-xs text-[var(--text-secondary)] font-normal">
                 Product Designer &amp; Frontend Engineer • Bengaluru, India
               </p>
             </div>
           </Link>
 
           {/* Quick Nav Links */}
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wider font-semibold text-[var(--text-secondary)]">
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 font-sans text-xs font-semibold text-[var(--text-secondary)]">
             <Link to="/" className="hover:text-[var(--accent-primary)] transition-colors">
               Home
             </Link>
@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Metadata */}
-        <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-mono text-xs text-[var(--text-secondary)]">
+        <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-sans text-xs text-[var(--text-secondary)]">
           <p>© {CURRENT_YEAR} Fazil Arshiya. All rights reserved.</p>
           <p className="flex items-center gap-2">
             <span>Built with React 19, TypeScript &amp; Tailwind CSS v4</span>

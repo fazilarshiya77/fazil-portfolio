@@ -32,7 +32,7 @@ export const AboutPage: React.FC = () => {
 
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="space-y-4 max-w-2xl">
-                <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[#2D2320]/70 dark:text-[#FFF0EB]/70 mb-2">
+                <div className="flex flex-wrap items-center gap-2 font-sans text-xs text-[#2D2320]/70 dark:text-[#FFF0EB]/70 mb-2">
                   <Link to="/" className="hover:underline">Home</Link>
                   <span>/</span>
                   <span className="font-bold text-[#7562E0] dark:text-[#9D8DF8]">About Me</span>
@@ -63,7 +63,7 @@ export const AboutPage: React.FC = () => {
             {/* Left Column: Authoritative Editorial Journey */}
             <div className="lg:col-span-7 space-y-8">
               <div className="rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-8 sm:p-10 shadow-xs space-y-6">
-                <span className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--accent-primary)] block">
+                <span className="font-sans text-xs font-bold uppercase tracking-wider text-[var(--accent-primary)] block">
                   Background &amp; Philosophy
                 </span>
 
@@ -79,7 +79,7 @@ export const AboutPage: React.FC = () => {
                   I enjoy taking intricate operational workflows—like multi-location property filtering, live wedding package estimators, or 24/7 outstation route calculators—and turning them into accessible, lightweight interfaces that convert prospective buyers effortlessly.
                 </p>
 
-                <div className="pt-6 border-t border-[var(--border-color)] grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs text-[var(--text-secondary)]">
+                <div className="pt-6 border-t border-[var(--border-color)] grid grid-cols-1 sm:grid-cols-2 gap-4 font-sans text-xs text-[var(--text-secondary)]">
                   <div className="flex items-center gap-2 font-semibold text-[var(--text-primary)]">
                     <MapPin className="w-4 h-4 text-[var(--accent-primary)]" />
                     <span>Based in Bengaluru, India</span>
@@ -93,7 +93,7 @@ export const AboutPage: React.FC = () => {
 
               {/* Core Values & Working Standards */}
               <div className="rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-8 sm:p-10 shadow-xs space-y-6">
-                <span className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--accent-primary)] block">
+                <span className="font-sans text-xs font-bold uppercase tracking-wider text-[var(--accent-primary)] block">
                   Operating Principles
                 </span>
 
@@ -145,7 +145,7 @@ export const AboutPage: React.FC = () => {
             <div className="lg:col-span-5 space-y-6">
               
               {/* Verified Metrics Counter */}
-              <div className="p-6 rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-xs space-y-4 font-mono">
+              <div className="p-6 rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-xs space-y-4 font-sans">
                 <span className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] block">
                   Production Track Record
                 </span>
@@ -239,7 +239,7 @@ export const AboutPage: React.FC = () => {
           {/* Navigation to Work */}
           <div className="p-8 sm:p-10 rounded-3xl bg-[var(--bg-surface)] border border-[var(--border-color)] flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xs">
             <div className="space-y-1">
-              <span className="font-mono text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">
+              <span className="font-sans text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">
                 Next in the Experience
               </span>
               <h3 className="font-heading text-xl sm:text-2xl font-bold text-[var(--text-primary)] tracking-tight">
@@ -250,7 +250,7 @@ export const AboutPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 font-mono text-xs shrink-0">
+            <div className="flex items-center gap-3 font-sans text-xs shrink-0">
               <Link
                 to="/work"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold uppercase tracking-wider shadow-xs transition-all"

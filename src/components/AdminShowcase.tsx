@@ -35,7 +35,7 @@ export const AdminShowcase: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-10 border-b border-[var(--border-color)]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-sans font-semibold bg-[var(--bg-surface)] text-[var(--accent-primary)] border border-[var(--border-color)] mb-3 shadow-xs">
               <span>02</span>
               <span>/</span>
               <span>Systems &amp; Architecture</span>
@@ -58,7 +58,7 @@ export const AdminShowcase: React.FC = () => {
         <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] overflow-hidden shadow-sm mb-16">
           
           {/* Top Specification Banner */}
-          <div className="px-6 py-4 bg-[var(--bg-secondary)]/50 border-b border-[var(--border-color)] flex flex-wrap items-center justify-between gap-3 font-mono text-xs text-[var(--text-secondary)]">
+          <div className="px-6 py-4 bg-[var(--bg-secondary)]/50 border-b border-[var(--border-color)] flex flex-wrap items-center justify-between gap-3 font-sans text-xs text-[var(--text-secondary)]">
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent-primary)] animate-pulse" />
               <span className="text-[var(--text-primary)] font-bold uppercase tracking-wider">
@@ -78,11 +78,11 @@ export const AdminShowcase: React.FC = () => {
           {/* Metric Bar with Alternating Lavender & Peach Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 p-6 gap-4 border-b border-[var(--border-color)] bg-[var(--bg-surface)]">
             <div className="p-4 rounded-2xl bg-[#B8B0EA]/20 dark:bg-[#312A50]/30 border border-[#B8B0EA]/40 dark:border-[#312A50]">
-              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--accent-primary)] mb-1">
+              <span className="block text-[11px] font-sans font-bold uppercase tracking-wider text-[var(--accent-primary)] mb-1">
                 Incoming Inquiries
               </span>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--text-primary)]">284</span>
+                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]">284</span>
                 <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold flex items-center">
                   <TrendingUp className="w-3.5 h-3.5 mr-0.5" /> +14%
                 </span>
@@ -90,11 +90,11 @@ export const AdminShowcase: React.FC = () => {
             </div>
 
             <div className="p-4 rounded-2xl bg-[#F8D8C8]/25 dark:bg-[#3D2825]/30 border border-[#F8D8C8]/50 dark:border-[#3D2825]">
-              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[#E87252] mb-1">
+              <span className="block text-[11px] font-sans font-bold uppercase tracking-wider text-[#E87252] mb-1">
                 Avg Response Time
               </span>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--text-primary)]">12m</span>
+                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]">12m</span>
                 <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold flex items-center">
                   <Clock className="w-3.5 h-3.5 mr-0.5" /> Optimal
                 </span>
@@ -102,28 +102,28 @@ export const AdminShowcase: React.FC = () => {
             </div>
 
             <div className="p-4 rounded-2xl bg-[#B8B0EA]/20 dark:bg-[#312A50]/30 border border-[#B8B0EA]/40 dark:border-[#312A50]">
-              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--accent-primary)] mb-1">
+              <span className="block text-[11px] font-sans font-bold uppercase tracking-wider text-[var(--accent-primary)] mb-1">
                 Pipeline Conversion
               </span>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--text-primary)]">38.4%</span>
+                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]">38.4%</span>
                 <span className="text-xs text-[var(--accent-primary)] font-bold">Active SLA</span>
               </div>
             </div>
 
             <div className="p-4 rounded-2xl bg-[#F8D8C8]/25 dark:bg-[#3D2825]/30 border border-[#F8D8C8]/50 dark:border-[#3D2825]">
-              <span className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[#E87252] mb-1">
+              <span className="block text-[11px] font-sans font-bold uppercase tracking-wider text-[#E87252] mb-1">
                 Connected Portals
               </span>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--text-primary)]">5 Active</span>
+                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]">5 Active</span>
                 <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold">Synced</span>
               </div>
             </div>
           </div>
 
           {/* Filter Bar & Search */}
-          <div className="p-6 border-b border-[var(--border-color)] bg-[var(--bg-primary)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs">
+          <div className="p-6 border-b border-[var(--border-color)] bg-[var(--bg-primary)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans text-xs">
             <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
               {(['all', 'New', 'In Progress', 'Contacted', 'Closed'] as const).map((tab) => {
                 const isActive = activeTab === tab;
@@ -165,7 +165,7 @@ export const AdminShowcase: React.FC = () => {
           {/* Records Table */}
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-[var(--bg-surface)] border-b border-[var(--border-color)] text-[var(--text-secondary)] font-mono uppercase text-[11px] tracking-wider">
+              <thead className="bg-[var(--bg-surface)] border-b border-[var(--border-color)] text-[var(--text-secondary)] font-sans uppercase text-[11px] tracking-wider">
                 <tr>
                   <th className="py-3.5 px-6 font-bold">Record ID &amp; Client</th>
                   <th className="py-3.5 px-6 font-bold">Requirement Scope</th>
@@ -189,7 +189,7 @@ export const AdminShowcase: React.FC = () => {
                     >
                       <td className="py-4 px-6">
                         <div className="font-bold text-sm text-[var(--text-primary)]">{lead.clientName}</div>
-                        <span className="font-mono text-xs text-[var(--text-muted)]">
+                        <span className="font-sans text-xs text-[var(--text-muted)]">
                           {lead.id} • {lead.date}
                         </span>
                       </td>
@@ -198,13 +198,13 @@ export const AdminShowcase: React.FC = () => {
                         {lead.serviceRequested}
                       </td>
 
-                      <td className="py-4 px-6 font-mono text-xs text-[var(--text-secondary)] hidden sm:table-cell">
+                      <td className="py-4 px-6 font-sans text-xs text-[var(--text-secondary)] hidden sm:table-cell">
                         <span className="px-2.5 py-1 rounded-md bg-[var(--bg-primary)] border border-[var(--border-color)]">
                           {lead.source}
                         </span>
                       </td>
 
-                      <td className="py-4 px-6 font-mono text-xs uppercase tracking-wider font-bold">
+                      <td className="py-4 px-6 font-sans text-xs uppercase tracking-wider font-bold">
                         <span
                           className={`px-2.5 py-1 rounded-lg border ${
                             lead.status === 'New'
@@ -220,7 +220,7 @@ export const AdminShowcase: React.FC = () => {
                         </span>
                       </td>
 
-                      <td className="py-4 px-6 text-right font-mono text-xs">
+                      <td className="py-4 px-6 text-right font-sans text-xs">
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
@@ -244,7 +244,7 @@ export const AdminShowcase: React.FC = () => {
 
           {/* Selected Record Spec Sheet Drawer */}
           {selectedLead && (
-            <div className="p-6 border-t border-[var(--border-color)] bg-[var(--bg-primary)] font-mono text-xs space-y-3">
+            <div className="p-6 border-t border-[var(--border-color)] bg-[var(--bg-primary)] font-sans text-xs space-y-3">
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs uppercase tracking-wider font-bold text-[var(--text-secondary)]">
                 <span className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[var(--accent-primary)]" />
@@ -269,7 +269,7 @@ export const AdminShowcase: React.FC = () => {
                   </span>
                   <span className="text-[var(--text-primary)] font-sans font-bold text-sm">
                     {selectedLead.serviceRequested}{' '}
-                    <span className="text-[var(--accent-primary)] font-mono">({selectedLead.value})</span>
+                    <span className="text-[var(--accent-primary)] font-sans font-semibold">({selectedLead.value})</span>
                   </span>
                 </div>
 
@@ -277,7 +277,7 @@ export const AdminShowcase: React.FC = () => {
                   <span className="block text-[10px] text-[var(--text-muted)] uppercase tracking-wider mb-1 font-bold">
                     Inbound Pipeline Source
                   </span>
-                  <span className="text-[var(--text-secondary)] font-mono font-medium">
+                  <span className="text-[var(--text-secondary)] font-sans font-medium">
                     {selectedLead.source}
                   </span>
                 </div>
@@ -298,7 +298,7 @@ export const AdminShowcase: React.FC = () => {
                 <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary-soft)] text-[var(--accent-primary)] flex items-center justify-center font-bold">
                   {getCapabilityIcon(cap.icon)}
                 </div>
-                <span className="font-mono text-xs font-bold text-[var(--text-muted)]">
+                <span className="font-sans text-xs font-bold text-[var(--text-muted)]">
                   0{idx + 1}
                 </span>
               </div>

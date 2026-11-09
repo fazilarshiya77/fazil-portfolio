@@ -35,7 +35,7 @@ export const WorkPage: React.FC = () => {
 
             <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
-                <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[#232035]/80 dark:text-[#F8F6FF]/80 mb-2">
+                <div className="flex flex-wrap items-center gap-2 font-sans text-xs text-[#232035]/80 dark:text-[#F8F6FF]/80 mb-2">
                   <Link to="/" className="hover:underline">Home</Link>
                   <span>/</span>
                   <span className="font-bold text-[#232035] dark:text-white">Selected Work Archive</span>
@@ -49,7 +49,7 @@ export const WorkPage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-xs font-mono bg-white dark:bg-[#221E35] text-[#232035] dark:text-white px-4 py-2.5 rounded-full shadow-md shrink-0">
+              <div className="flex items-center gap-2 text-xs font-sans bg-white dark:bg-[#221E35] text-[#232035] dark:text-white px-4 py-2.5 rounded-full shadow-md shrink-0">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span className="font-bold">All 5 sites deployed to production</span>
               </div>
@@ -57,7 +57,7 @@ export const WorkPage: React.FC = () => {
           </div>
 
           {/* Category Filter Bar with Animated Sliding Pill */}
-          <div className="flex items-center justify-between flex-wrap gap-4 mb-10 font-mono text-xs">
+          <div className="flex items-center justify-between flex-wrap gap-4 mb-10 font-sans text-xs">
             <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 no-scrollbar">
               {projectCategories.map((category) => {
                 const count = category === 'All Projects'
@@ -118,7 +118,7 @@ export const WorkPage: React.FC = () => {
           {/* Next Steps Navigation Bar */}
           <div className="mt-20 p-8 rounded-2xl bg-[var(--bg-secondary)]/50 border border-[var(--border-color)] flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xs">
             <div className="space-y-1">
-              <span className="font-mono text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">
+              <span className="font-sans text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider block">
                 Next in the Experience
               </span>
               <h3 className="font-heading text-xl sm:text-2xl font-bold text-[var(--text-primary)] tracking-tight">
@@ -131,7 +131,7 @@ export const WorkPage: React.FC = () => {
 
             <Link
               to="/capabilities"
-              className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold font-mono text-xs uppercase tracking-wider shadow-xs transition-all"
+              className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold font-sans text-xs uppercase tracking-wider shadow-xs transition-all"
             >
               <span>Explore Capabilities →</span>
             </Link>
