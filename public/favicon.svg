@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="12" fill="#242421" />
-  <rect x="1" y="1" width="62" height="62" rx="11" fill="none" stroke="#3D3D37" stroke-width="1.5" />
-  <text x="31" y="42" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="600" font-size="24" fill="#F7F6F2" text-anchor="middle" letter-spacing="-0.5">FA</text>
-  <circle cx="48" cy="22" r="2.5" fill="#9BA88D" />
+  <rect width="64" height="64" rx="14" fill="#E97850" />
+  <text x="32" y="42" font-family="'Manrope', system-ui, -apple-system, sans-serif" font-weight="800" font-size="25" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.5">FA</text>
+  <circle cx="49" cy="21" r="3" fill="#F1D987" />
 </svg>

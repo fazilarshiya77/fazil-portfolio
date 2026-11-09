@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Project } from '../data/projects';
-import { X, ArrowUpRight } from 'lucide-react';
+import { X, ArrowUpRight, CheckCircle2, Sparkles, Layers, ShieldCheck } from 'lucide-react';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -29,29 +29,28 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   return (
     <AnimatePresence>
       <div 
-        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 lg:p-8 bg-black/50 backdrop-blur-xs overflow-y-auto"
+        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 lg:p-8 bg-black/60 backdrop-blur-sm overflow-y-auto"
         onClick={onClose}
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.98, y: 12 }}
+          initial={{ opacity: 0, scale: 0.95, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.98, y: 12 }}
-          transition={{ duration: 0.2, ease: 'easeOut' }}
-          className="relative w-full max-w-4xl bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg shadow-2xl overflow-hidden my-auto"
+          exit={{ opacity: 0, scale: 0.95, y: 16 }}
+          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-full max-w-4xl bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-3xl shadow-2xl overflow-hidden my-auto"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Modal Specification Header */}
-          <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--border)] bg-[var(--bg-primary)]">
-            <div className="flex items-center gap-4">
-              <span className="font-mono text-xs text-[var(--accent)] font-medium">
-                {project.number} / CASE SPEC
+          {/* Modal Header */}
+          <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--border-color)] bg-[var(--bg-primary)]">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs font-bold text-white bg-[var(--accent-primary)] px-3 py-1 rounded-lg">
+                CASE {project.number}
               </span>
-              <div className="h-3 w-[1px] bg-[var(--border)]" />
               <div>
-                <h3 className="text-lg font-medium tracking-tight text-[var(--text-primary)]">
+                <h3 className="text-xl font-extrabold text-[var(--text-primary)]">
                   {project.title}
                 </h3>
-                <span className="font-mono text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
+                <span className="font-mono text-xs text-[var(--text-secondary)]">
                   {project.categoryLabel}
                 </span>
               </div>
@@ -59,67 +58,74 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-muted)] flex items-center justify-center transition-colors focus:outline-none"
+              className="w-9 h-9 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)] flex items-center justify-center transition-colors focus:outline-none"
               aria-label="Close dossier"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Modal Body */}
+          {/* Modal Scrollable Body */}
           <div className="p-6 sm:p-8 max-h-[76vh] overflow-y-auto space-y-8">
             
             {/* Visual Frame */}
-            <div className="relative rounded-md overflow-hidden border border-[var(--border)] bg-[var(--bg-secondary)]">
+            <div className="relative rounded-2xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-secondary)] shadow-sm">
               <img
                 src={project.image}
                 alt={`${project.title} live interface preview`}
                 className="w-full h-auto object-cover max-h-[380px]"
                 loading="lazy"
               />
-              <div className="px-4 py-2 bg-[var(--bg-surface)] border-t border-[var(--border)] font-mono text-[10px] text-[var(--text-muted)] uppercase tracking-wider flex items-center justify-between">
-                <span>Production Capture / Verified Client Interface</span>
-                <span className="text-[var(--accent)] font-medium">Status: Active</span>
+              <div className="px-5 py-3 bg-[var(--bg-surface)] border-t border-[var(--border-color)] font-mono text-xs text-[var(--text-secondary)] flex items-center justify-between">
+                <span className="flex items-center gap-1.5 font-bold text-[var(--text-primary)]">
+                  <ShieldCheck className="w-4 h-4 text-emerald-500" />
+                  Verified Production Interface from Client Deployment
+                </span>
+                <span className="text-emerald-600 dark:text-emerald-400 font-semibold font-mono">
+                  ● 100% Active Server
+                </span>
               </div>
             </div>
 
-            {/* Context & Description */}
+            {/* Scope & Overview */}
             <div className="space-y-3">
-              <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)] block">
-                01 / Project Scope &amp; Context
+              <span className="font-mono text-xs uppercase tracking-wider text-[var(--accent-primary)] font-bold block">
+                01 / Project Scope &amp; Commercial Context
               </span>
-              <p className="text-sm sm:text-base text-[var(--text-secondary)] font-light leading-relaxed">
+              <p className="text-base text-[var(--text-secondary)] leading-relaxed">
                 {project.fullDescription}
               </p>
             </div>
 
             {/* Structured Specifications Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pt-4 border-t border-[var(--border)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pt-4 border-t border-[var(--border-color)]">
               
-              {/* Left Column: Features & Deliverables */}
-              <div className="space-y-5">
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)] block mb-3">
-                    02 / Engineering Highlights
-                  </span>
-                  <ul className="space-y-2 text-xs text-[var(--text-secondary)] font-light">
+              {/* Left Column: Engineering & Features */}
+              <div className="space-y-6">
+                <div className="p-5 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
+                  <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[var(--accent-primary)]" />
+                    <span>Engineering Deliverables</span>
+                  </h4>
+                  <ul className="space-y-2 text-xs text-[var(--text-secondary)] font-medium">
                     {project.skillsHighlighted.map((skill, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="text-[var(--accent)] font-mono text-[10px] mt-0.5">—</span>
+                        <span className="text-[var(--accent-primary)] font-bold mt-0.5">•</span>
                         <span>{skill}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="pt-4 border-t border-[var(--border-subtle)]">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)] block mb-3">
-                    03 / Features &amp; User Journeys
-                  </span>
-                  <ul className="space-y-2 text-xs text-[var(--text-secondary)] font-light">
+                <div className="p-5 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
+                  <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3 flex items-center gap-2">
+                    <Layers className="w-4 h-4 text-[var(--accent-primary)]" />
+                    <span>Key Features &amp; Workflows</span>
+                  </h4>
+                  <ul className="space-y-2 text-xs text-[var(--text-secondary)] font-medium">
                     {project.features.map((feat, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="text-[var(--text-muted)] font-mono text-[10px] mt-0.5">•</span>
+                        <span className="text-emerald-500 font-bold mt-0.5">✓</span>
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -127,31 +133,32 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 </div>
               </div>
 
-              {/* Right Column: Design System & Technologies */}
-              <div className="space-y-5">
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)] block mb-3">
-                    04 / Design Principles &amp; Polish
-                  </span>
-                  <ul className="space-y-2 text-xs text-[var(--text-secondary)] font-light">
+              {/* Right Column: Design Principles & Tech Stack */}
+              <div className="space-y-6">
+                <div className="p-5 rounded-2xl bg-[var(--bg-peach)]/50 border border-[var(--border-orange)]">
+                  <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[var(--accent-primary)]" />
+                    <span>Design Systems &amp; Visual Identity</span>
+                  </h4>
+                  <ul className="space-y-2 text-xs text-[var(--text-secondary)] font-medium">
                     {project.designHighlights.map((highlight, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="text-[var(--accent)] font-mono text-[10px] mt-0.5">—</span>
+                        <span className="text-[var(--accent-primary)] font-bold mt-0.5">—</span>
                         <span>{highlight}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="pt-4 border-t border-[var(--border-subtle)]">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)] block mb-3">
-                    05 / Architecture &amp; Tooling
-                  </span>
-                  <div className="flex flex-wrap gap-1.5">
+                <div className="p-5 rounded-2xl bg-[var(--bg-lavender)]/50 border border-[var(--border-lavender)]">
+                  <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--text-primary)] font-bold mb-3">
+                    Technology Tokens &amp; Libraries
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded border border-[var(--border)] bg-[var(--bg-primary)] text-[var(--text-secondary)]"
+                        className="font-mono text-xs font-bold px-3 py-1 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-primary)]"
                       >
                         {tag}
                       </span>
@@ -165,15 +172,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Modal Action Bar */}
-          <div className="px-6 py-4 border-t border-[var(--border)] bg-[var(--bg-primary)] flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
-            <span className="text-[11px] text-[var(--text-muted)] truncate max-w-sm">
-              Endpoint: {project.liveUrl}
+          <div className="px-6 py-5 border-t border-[var(--border-color)] bg-[var(--bg-primary)] flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+            <span className="text-xs text-[var(--text-secondary)] truncate max-w-sm">
+              Target: <code className="text-[var(--accent-primary)] font-bold">{project.liveUrl}</code>
             </span>
 
             <div className="flex items-center gap-3">
               <button
                 onClick={onClose}
-                className="px-4 py-2 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors uppercase tracking-wider"
+                className="px-5 py-2.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-bold uppercase tracking-wider"
               >
                 Close
               </button>
@@ -182,10 +189,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[var(--text-primary)] text-[var(--bg-primary)] hover:opacity-90 transition-opacity uppercase tracking-wider font-medium"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white font-bold tracking-wider uppercase shadow-md shadow-[var(--accent-primary)]/20 transition-all duration-200"
               >
                 <span>Launch Live Website</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
           </div>
