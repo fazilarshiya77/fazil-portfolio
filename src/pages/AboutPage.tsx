@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { PageTransition } from '../components/PageTransition';
 import { SparkleStar } from '../components/SparkleStar';
+import { AnimatedCounter } from '../components/AnimatedCounter';
 import { 
   Palette, 
   Code2, 
@@ -151,25 +153,25 @@ export const AboutPage: React.FC = () => {
                 </span>
 
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="p-4 rounded-2xl bg-[var(--bg-secondary)]/70 border border-[var(--border-color)]">
-                    <span className="text-3xl font-extrabold text-[var(--text-primary)] block">05</span>
+                  <motion.div whileHover={{ scale: 1.04 }} className="p-4 rounded-2xl bg-[var(--bg-secondary)]/70 border border-[var(--border-color)] transition-transform">
+                    <AnimatedCounter value={5} prefix="0" className="text-3xl font-extrabold text-[var(--text-primary)] block" />
                     <span className="text-[10px] text-[var(--accent-primary)] font-bold uppercase tracking-wider">Live Deployments</span>
-                  </div>
+                  </motion.div>
 
-                  <div className="p-4 rounded-2xl bg-[var(--bg-secondary)]/70 border border-[var(--border-color)]">
-                    <span className="text-3xl font-extrabold text-[var(--text-primary)] block">₹250+ Cr</span>
+                  <motion.div whileHover={{ scale: 1.04 }} className="p-4 rounded-2xl bg-[var(--bg-secondary)]/70 border border-[var(--border-color)] transition-transform">
+                    <AnimatedCounter value={250} prefix="₹" suffix="+ Cr" className="text-3xl font-extrabold text-[var(--text-primary)] block" />
                     <span className="text-[10px] text-[var(--accent-primary)] font-bold uppercase tracking-wider">Property Scope</span>
-                  </div>
+                  </motion.div>
 
-                  <div className="p-4 rounded-2xl bg-[var(--bg-secondary)]/70 border border-[var(--border-color)]">
-                    <span className="text-3xl font-extrabold text-[var(--text-primary)] block">100%</span>
+                  <motion.div whileHover={{ scale: 1.04 }} className="p-4 rounded-2xl bg-[var(--bg-secondary)]/70 border border-[var(--border-color)] transition-transform">
+                    <AnimatedCounter value={100} suffix="%" className="text-3xl font-extrabold text-[var(--text-primary)] block" />
                     <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">Client Deployed</span>
-                  </div>
+                  </motion.div>
 
-                  <div className="p-4 rounded-2xl bg-[var(--bg-secondary)]/70 border border-[var(--border-color)]">
+                  <motion.div whileHover={{ scale: 1.04 }} className="p-4 rounded-2xl bg-[var(--bg-secondary)]/70 border border-[var(--border-color)] transition-transform">
                     <span className="text-3xl font-extrabold text-[var(--text-primary)] block">&lt;24h</span>
                     <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">Response SLA</span>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
 

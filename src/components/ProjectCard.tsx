@@ -12,30 +12,38 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails, index }) => {
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
+  const [tilt, setTilt] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    setMousePos({ x, y });
+
+    const xPct = x / rect.width - 0.5;
+    const yPct = y / rect.height - 0.5;
+    setTilt({ x: xPct * 6, y: -yPct * 6 });
   };
 
   const handleMouseLeave = () => {
     setMousePos(null);
+    setTilt({ x: 0, y: 0 });
   };
 
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.45, delay: index * 0.08 }}
-      whileHover={{ y: -4 }}
+      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group relative rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-6 sm:p-8 shadow-xs hover:shadow-md hover:border-[var(--accent-primary)] transition-all duration-300 overflow-hidden"
+      style={{
+        transform: tilt.x !== 0 ? `perspective(1000px) rotateY(${tilt.x}deg) rotateX(${tilt.y}deg)` : undefined,
+        transition: 'transform 0.15s ease-out',
+      }}
+      className="group relative rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-[var(--accent-primary)] transition-all duration-300 overflow-hidden"
     >
       {/* Soft Interactive Spotlight Sheen on Hover */}
       {mousePos && (

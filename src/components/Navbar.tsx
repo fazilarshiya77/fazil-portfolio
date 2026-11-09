@@ -91,20 +91,31 @@ export const Navbar: React.FC = () => {
               </div>
             </Link>
 
-            {/* Desktop Navigation Links */}
+            {/* Desktop Navigation Links with Animated Sliding Pill */}
             <nav className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xs">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.path}
                   to={link.path}
                   end={link.path === '/'}
-                  className={({ isActive }) => `px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-150 ${
-                    isActive
-                      ? 'bg-[var(--accent-primary)] text-white shadow-xs'
-                      : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]'
-                  }`}
+                  className="relative px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors"
                 >
-                  {link.label}
+                  {({ isActive }) => (
+                    <>
+                      {isActive && (
+                        <motion.div
+                          layoutId="navbarActivePill"
+                          transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                          className="absolute inset-0 rounded-full bg-[var(--accent-primary)] shadow-xs z-0"
+                        />
+                      )}
+                      <span className={`relative z-10 transition-colors duration-150 ${
+                        isActive ? 'text-white font-bold' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                      }`}>
+                        {link.label}
+                      </span>
+                    </>
+                  )}
                 </NavLink>
               ))}
             </nav>

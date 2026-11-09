@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { sampleAdminLeads, adminCapabilities, type AdminLead } from '../data/adminData';
 import { Search, TrendingUp, Clock, ShieldCheck, LayoutDashboard, Users, Layers, BarChart3, Smartphone } from 'lucide-react';
 import { SparkleStar } from './SparkleStar';
+import { AnimatedCounter } from './AnimatedCounter';
 
 export const AdminShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'New' | 'In Progress' | 'Contacted' | 'Closed'>('all');
@@ -77,49 +78,49 @@ export const AdminShowcase: React.FC = () => {
 
           {/* Metric Bar with Alternating Lavender & Peach Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 p-6 gap-4 border-b border-[var(--border-color)] bg-[var(--bg-surface)]">
-            <div className="p-4 rounded-2xl bg-[#B8B0EA]/20 dark:bg-[#312A50]/30 border border-[#B8B0EA]/40 dark:border-[#312A50]">
+            <motion.div whileHover={{ scale: 1.03 }} className="p-4 rounded-2xl bg-[#B8B0EA]/20 dark:bg-[#312A50]/30 border border-[#B8B0EA]/40 dark:border-[#312A50] transition-transform">
               <span className="block text-[11px] font-sans font-bold uppercase tracking-wider text-[var(--accent-primary)] mb-1">
                 Incoming Inquiries
               </span>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]">284</span>
+                <AnimatedCounter value={284} className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]" />
                 <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold flex items-center">
                   <TrendingUp className="w-3.5 h-3.5 mr-0.5" /> +14%
                 </span>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-4 rounded-2xl bg-[#F8D8C8]/25 dark:bg-[#3D2825]/30 border border-[#F8D8C8]/50 dark:border-[#3D2825]">
+            <motion.div whileHover={{ scale: 1.03 }} className="p-4 rounded-2xl bg-[#F8D8C8]/25 dark:bg-[#3D2825]/30 border border-[#F8D8C8]/50 dark:border-[#3D2825] transition-transform">
               <span className="block text-[11px] font-sans font-bold uppercase tracking-wider text-[#E87252] mb-1">
                 Avg Response Time
               </span>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]">12m</span>
+                <AnimatedCounter value={12} suffix="m" className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]" />
                 <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold flex items-center">
                   <Clock className="w-3.5 h-3.5 mr-0.5" /> Optimal
                 </span>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-4 rounded-2xl bg-[#B8B0EA]/20 dark:bg-[#312A50]/30 border border-[#B8B0EA]/40 dark:border-[#312A50]">
+            <motion.div whileHover={{ scale: 1.03 }} className="p-4 rounded-2xl bg-[#B8B0EA]/20 dark:bg-[#312A50]/30 border border-[#B8B0EA]/40 dark:border-[#312A50] transition-transform">
               <span className="block text-[11px] font-sans font-bold uppercase tracking-wider text-[var(--accent-primary)] mb-1">
                 Pipeline Conversion
               </span>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]">38.4%</span>
+                <AnimatedCounter value={38} suffix=".4%" className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]" />
                 <span className="text-xs text-[var(--accent-primary)] font-bold">Active SLA</span>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="p-4 rounded-2xl bg-[#F8D8C8]/25 dark:bg-[#3D2825]/30 border border-[#F8D8C8]/50 dark:border-[#3D2825]">
+            <motion.div whileHover={{ scale: 1.03 }} className="p-4 rounded-2xl bg-[#F8D8C8]/25 dark:bg-[#3D2825]/30 border border-[#F8D8C8]/50 dark:border-[#3D2825] transition-transform">
               <span className="block text-[11px] font-sans font-bold uppercase tracking-wider text-[#E87252] mb-1">
                 Connected Portals
               </span>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]">5 Active</span>
+                <AnimatedCounter value={5} suffix=" Active" className="text-2xl sm:text-3xl font-extrabold font-sans text-[var(--text-primary)]" />
                 <span className="text-xs text-emerald-600 dark:text-emerald-400 font-bold">Synced</span>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Filter Bar & Search */}

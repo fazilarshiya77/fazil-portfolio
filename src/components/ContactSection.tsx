@@ -44,8 +44,14 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 relative scroll-mt-16 bg-[var(--bg-primary)]">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-12 sm:py-16 relative scroll-mt-16 bg-[var(--bg-primary)] overflow-hidden">
+      {/* Ambient Floating Glow Orbs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-10 -right-20 w-80 h-80 rounded-full bg-[#B8B0EA]/25 blur-3xl animate-float-slow" />
+        <div className="absolute bottom-10 -left-20 w-80 h-80 rounded-full bg-[#F8D8C8]/25 blur-3xl animate-float-reverse" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Section Header */}
         <div className="relative flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-12 border-b border-[var(--border-color)]">
@@ -90,9 +96,11 @@ export const ContactSection: React.FC = () => {
                   <span className="font-sans text-xs sm:text-sm text-[var(--text-primary)] select-all truncate font-semibold">
                     {emailAddress}
                   </span>
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     onClick={handleCopyEmail}
-                    className="shrink-0 px-3.5 py-1.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:bg-[var(--accent-primary)] hover:text-white hover:border-[var(--accent-primary)] text-xs font-sans font-bold text-[var(--text-secondary)] flex items-center gap-1.5 transition-all focus:outline-none"
+                    className="shrink-0 px-3.5 py-1.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:bg-[var(--accent-primary)] hover:text-white hover:border-[var(--accent-primary)] text-xs font-sans font-bold text-[var(--text-secondary)] flex items-center gap-1.5 transition-all focus:outline-none shadow-xs"
                     aria-label="Copy email address"
                   >
                     {copied ? (
@@ -106,7 +114,7 @@ export const ContactSection: React.FC = () => {
                         <span>Copy</span>
                       </>
                     )}
-                  </button>
+                  </motion.button>
                 </div>
               </div>
 
@@ -247,13 +255,15 @@ export const ContactSection: React.FC = () => {
                   />
                 </div>
 
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white uppercase tracking-wider text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-2 focus:outline-none"
+                  className="w-full py-3.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-white uppercase tracking-wider text-xs font-bold transition-all shadow-md flex items-center justify-center gap-2 focus:outline-none cursor-pointer"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Send Message via Email Client →</span>
-                </button>
+                </motion.button>
 
                 <AnimatePresence>
                   {formSentNotice && (

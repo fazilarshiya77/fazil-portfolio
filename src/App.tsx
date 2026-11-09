@@ -6,6 +6,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ScrollProgress } from './components/ScrollProgress';
+import { CustomCursor } from './components/CustomCursor';
 import { HomePage } from './pages/HomePage';
 import { WorkPage } from './pages/WorkPage';
 import { AboutPage } from './pages/AboutPage';
@@ -39,6 +40,7 @@ export const App: React.FC = () => {
         <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-200 antialiased flex flex-col justify-between">
           <ScrollToTop />
           <ScrollProgress />
+          <CustomCursor />
           <Navbar />
 
           <main id="main-content" className="flex-1">

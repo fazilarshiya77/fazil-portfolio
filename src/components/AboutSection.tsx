@@ -1,5 +1,6 @@
 import React from 'react';
 import { Palette, Code2, Layers, Sparkles, MapPin, Briefcase } from 'lucide-react';
+import { AnimatedCounter } from './AnimatedCounter';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -51,17 +52,17 @@ export const AboutSection: React.FC = () => {
               {/* Verified Metrics Counter Strip */}
               <div className="pt-6 border-t border-[var(--border-color)] grid grid-cols-2 sm:grid-cols-4 gap-4 font-sans">
                 <div className="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)]">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] block">05</span>
+                  <AnimatedCounter value={5} prefix="0" className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] block" />
                   <span className="text-[10px] text-[var(--accent-primary)] font-bold uppercase tracking-wider">Live Deployments</span>
                 </div>
 
                 <div className="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)]">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] block">₹250+ Cr</span>
+                  <AnimatedCounter value={250} prefix="₹" suffix="+ Cr" className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] block" />
                   <span className="text-[10px] text-[var(--accent-primary)] font-bold uppercase tracking-wider">Property Scope</span>
                 </div>
 
                 <div className="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)]">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] block">100%</span>
+                  <AnimatedCounter value={100} suffix="%" className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] block" />
                   <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">Client Verified</span>
                 </div>
 

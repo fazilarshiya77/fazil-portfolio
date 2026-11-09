@@ -45,21 +45,31 @@ export const ProcessSection: React.FC = () => {
             return (
               <motion.div
                 key={step.step}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.25 }}
-                className={`relative rounded-3xl border ${cardBg} p-6 sm:p-7 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6 overflow-hidden`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.55, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className={`relative rounded-3xl border ${cardBg} p-6 sm:p-7 shadow-sm hover:shadow-xl transition-all duration-200 flex flex-col justify-between space-y-6 overflow-hidden group`}
               >
-                {/* Subtle Sparkle Star on Each Card */}
-                <div className="absolute top-4 right-4">
-                  <SparkleStar size={16} delay={idx % 3 as 0 | 1 | 2} className={isEven ? "text-[#B8B0EA] opacity-60" : "text-[#E87252] opacity-60"} />
-                </div>
+                {/* Subtle Sparkle Star on Each Card with Twinkle Float */}
+                <motion.div 
+                  animate={{ y: [0, -4, 0], rotate: [0, 8, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, delay: idx * 0.5 }}
+                  className="absolute top-4 right-4"
+                >
+                  <SparkleStar size={18} delay={idx % 3 as 0 | 1 | 2} className={isEven ? "text-[#B8B0EA] opacity-80" : "text-[#E87252] opacity-80"} />
+                </motion.div>
 
                 <div className="space-y-4">
                   {/* Number Badge */}
                   <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
-                    <div className={`w-10 h-10 rounded-2xl ${badgeBg} flex items-center justify-center font-sans font-black text-sm shadow-xs`}>
+                    <motion.div 
+                      whileHover={{ scale: 1.15, rotate: 5 }}
+                      className={`w-10 h-10 rounded-2xl ${badgeBg} flex items-center justify-center font-sans font-black text-sm shadow-xs transition-transform`}
+                    >
                       {step.step}
-                    </div>
+                    </motion.div>
                     <span className="font-sans text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
                       Stage 0{idx + 1}
                     </span>

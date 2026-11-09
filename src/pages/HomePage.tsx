@@ -9,6 +9,7 @@ import { SparkleStar } from '../components/SparkleStar';
 import { projectsData, type Project } from '../data/projects';
 import { PageTransition } from '../components/PageTransition';
 import { ArrowRight } from 'lucide-react';
+import { AnimatedCounter } from '../components/AnimatedCounter';
 
 export const HomePage: React.FC = () => {
   useDocumentTitle('Product Designer & Frontend Engineer');
@@ -30,17 +31,25 @@ export const HomePage: React.FC = () => {
             
             {/* Card A: About Me (Soft Peach Card - Matches Reference Row 2 Left) */}
             <motion.div
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.25 }}
-              className="relative rounded-[2.5rem] bg-[#F8D8C8] dark:bg-[#3D2825] text-[#2D2320] dark:text-[#FFF0EB] p-8 sm:p-12 shadow-xl flex flex-col justify-between overflow-hidden"
+              whileHover={{ y: -8, scale: 1.01 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+              className="relative rounded-[2.5rem] bg-[#F8D8C8] dark:bg-[#3D2825] text-[#2D2320] dark:text-[#FFF0EB] p-8 sm:p-12 shadow-xl hover:shadow-2xl flex flex-col justify-between overflow-hidden group/card"
             >
-              {/* Sparkling Stars */}
-              <div className="absolute top-8 right-12">
+              {/* Sparkling Stars with Gentle Float */}
+              <motion.div 
+                animate={{ y: [0, -6, 0], rotate: [0, 10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute top-8 right-12"
+              >
                 <SparkleStar size={24} delay={0} className="text-[#2D2320]/25 dark:text-white/30" />
-              </div>
-              <div className="absolute bottom-8 left-10">
+              </motion.div>
+              <motion.div 
+                animate={{ y: [0, 6, 0], rotate: [0, -10, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute bottom-8 left-10"
+              >
                 <SparkleStar size={20} delay={1} className="text-[#2D2320]/20 dark:text-white/20" />
-              </div>
+              </motion.div>
 
               <div className="relative z-10 space-y-6">
                 
@@ -59,29 +68,31 @@ export const HomePage: React.FC = () => {
                   </div>
 
                   {/* Organic Heart/Curved Portrait Monogram (Matches Reference Cutout) */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white dark:bg-[#2A1D1A] flex items-center justify-center shadow-md shrink-0 border-2 border-white/60 dark:border-white/10">
+                  <motion.div 
+                    whileHover={{ scale: 1.12, rotate: 8 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white dark:bg-[#2A1D1A] flex items-center justify-center shadow-md shrink-0 border-2 border-white/60 dark:border-white/10 cursor-pointer"
+                  >
                     <span className="font-heading font-black text-2xl text-[#2D2320] dark:text-white">FA</span>
-                  </div>
+                  </motion.div>
                 </div>
 
                 <p className="text-sm sm:text-base leading-relaxed text-[#2D2320]/90 dark:text-[#FFF0EB]/90">
                   Hi! I'm <strong className="font-bold">Fazil Arshiya</strong>, a digital product designer and frontend engineer in Bengaluru. I bridge user research, modern visual identity, and production React 19 architecture across real estate, logistics, events, and travel.
                 </p>
 
-                {/* Tool Badges */}
+                {/* Tool Badges with Hover Springs */}
                 <div className="flex flex-wrap items-center gap-2 pt-2 font-sans text-xs">
-                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-semibold shadow-xs">
-                    Figma
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-semibold shadow-xs">
-                    React 19
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-semibold shadow-xs">
-                    TypeScript
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-white/70 dark:bg-white/10 text-[#2D2320] dark:text-white font-semibold shadow-xs">
-                    Tailwind CSS
-                  </span>
+                  {['Figma', 'React 19', 'TypeScript', 'Tailwind CSS'].map((tech) => (
+                    <motion.span
+                      key={tech}
+                      whileHover={{ scale: 1.08, y: -2 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+                      className="px-3.5 py-1.5 rounded-full bg-white/75 dark:bg-white/10 text-[#2D2320] dark:text-white font-semibold shadow-xs cursor-default hover:bg-white transition-colors"
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
                 </div>
 
               </div>
@@ -92,29 +103,39 @@ export const HomePage: React.FC = () => {
                   📍 Bengaluru, India
                 </span>
 
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#2D2320] text-white hover:bg-black transition-all font-sans text-xs font-semibold shadow-sm"
-                >
-                  <span>Full Story</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link
+                    to="/about"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#2D2320] text-white hover:bg-black transition-all font-sans text-xs font-semibold shadow-md"
+                  >
+                    <span>Full Story</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
 
             {/* Card B: Digital Presence & Stack (Soft Lavender Card - Matches Reference Row 2 Right) */}
             <motion.div
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.25 }}
-              className="relative rounded-[2.5rem] bg-[#B8B0EA] dark:bg-[#312A50] text-[#232035] dark:text-[#F8F6FF] p-8 sm:p-12 shadow-xl flex flex-col justify-between overflow-hidden"
+              whileHover={{ y: -8, scale: 1.01 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+              className="relative rounded-[2.5rem] bg-[#B8B0EA] dark:bg-[#312A50] text-[#232035] dark:text-[#F8F6FF] p-8 sm:p-12 shadow-xl hover:shadow-2xl flex flex-col justify-between overflow-hidden group/card"
             >
-              {/* Sparkling Stars */}
-              <div className="absolute top-8 left-12">
+              {/* Sparkling Stars with Gentle Float */}
+              <motion.div 
+                animate={{ y: [0, -6, 0], rotate: [0, -10, 0] }}
+                transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute top-8 left-12"
+              >
                 <SparkleStar size={24} delay={0} className="text-white opacity-85" />
-              </div>
-              <div className="absolute bottom-8 right-12">
+              </motion.div>
+              <motion.div 
+                animate={{ y: [0, 6, 0], rotate: [0, 10, 0] }}
+                transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute bottom-8 right-12"
+              >
                 <SparkleStar size={22} delay={2} className="text-white opacity-75" />
-              </div>
+              </motion.div>
 
               <div className="relative z-10 space-y-6">
                 <div>
@@ -130,16 +151,22 @@ export const HomePage: React.FC = () => {
                   Real digital products succeed when their administrative workflows are just as polished as public landing pages. I design interactive CRM consoles, lead triage matrices, and WhatsApp dispatch pipelines.
                 </p>
 
-                {/* Perspective Metric Indicators */}
+                {/* Perspective Metric Indicators with Animated Counter */}
                 <div className="grid grid-cols-2 gap-3 font-sans text-xs pt-1">
-                  <div className="p-3.5 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-xs">
-                    <span className="text-2xl font-black block text-[#232035] dark:text-white">05</span>
+                  <motion.div 
+                    whileHover={{ scale: 1.04 }}
+                    className="p-3.5 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-xs transition-transform"
+                  >
+                    <AnimatedCounter value={5} prefix="0" className="text-2xl font-black block text-[#232035] dark:text-white" />
                     <span className="text-[11px] font-semibold text-[#232035]/80 dark:text-white/80">Active Websites</span>
-                  </div>
-                  <div className="p-3.5 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-xs">
+                  </motion.div>
+                  <motion.div 
+                    whileHover={{ scale: 1.04 }}
+                    className="p-3.5 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-xs transition-transform"
+                  >
                     <span className="text-2xl font-black block text-[#232035] dark:text-white">&lt;24h</span>
                     <span className="text-[11px] font-semibold text-[#232035]/80 dark:text-white/80">Response SLA</span>
-                  </div>
+                  </motion.div>
                 </div>
 
               </div>
@@ -150,13 +177,15 @@ export const HomePage: React.FC = () => {
                   Interactive CRM Console Active
                 </span>
 
-                <Link
-                  to="/capabilities"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#232035] hover:bg-white/90 transition-all font-sans text-xs font-semibold shadow-sm"
-                >
-                  <span>Explore Stack</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link
+                    to="/capabilities"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#232035] hover:bg-white/90 transition-all font-sans text-xs font-semibold shadow-md"
+                  >
+                    <span>Explore Stack</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
 
