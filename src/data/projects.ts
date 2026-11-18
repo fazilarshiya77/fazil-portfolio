@@ -29,7 +29,7 @@ export const projectsData: Project[] = [
     shortDescription: 'A premium real-estate web experience focused on property discovery, business presentation, and helping prospective customers connect with the team.',
     fullDescription: 'Designed and developed for Sarakki Homes, this digital real estate platform showcases premium residential properties, trusted builder partnerships (such as Mahaveer, Shriram, Embassy, and Total Environment), and an intuitive search filter to connect prospective buyers with real estate advisors seamlessly.',
     liveUrl: 'https://www.sarakkihomes.com/',
-    image: '/assets/projects/sarakki-homes.png',
+    image: '/assets/projects/sarakki-homes.webp',
     tags: ['React', 'Responsive UI', 'Property Discovery', 'Search Filters', 'Tailwind CSS'],
     skillsHighlighted: [
       'Responsive UI & mobile ergonomics',
@@ -66,7 +66,7 @@ export const projectsData: Project[] = [
     shortDescription: 'A service-oriented website designed to present cab services, travel options, and booking enquiries through a clear customer journey.',
     fullDescription: 'Winter Cab Service is an active regional transport and travel agency platform. The website is engineered around quick lead generation, fare transparency, and 24/7 route booking for one-way rides, round trips, airport transfers, and group tempo travellers across scenic routes.',
     liveUrl: 'https://wintercabservice.com/',
-    image: '/assets/projects/winter-cab.png',
+    image: '/assets/projects/winter-cab.webp',
     tags: ['Service UX', 'Booking Flow', 'Responsive Design', 'Conversion Optimization', 'Web Development'],
     skillsHighlighted: [
       'Conversion-oriented lead flow',
@@ -101,7 +101,7 @@ export const projectsData: Project[] = [
     shortDescription: 'A visually engaging business website showcasing event services, presentation, and opportunities for customers to explore offerings and enquire.',
     fullDescription: 'Crafted for Davanagere’s trusted event management company, SID Events brings celebratory occasions, dream weddings, and grand corporate experiences to life. Features an editorial showcase and custom wedding package builder tailored for couples and event planners.',
     liveUrl: 'https://www.sideventsmanagement.com/',
-    image: '/assets/projects/sid-events.png',
+    image: '/assets/projects/sid-events.webp',
     tags: ['Visual Storytelling', 'Editorial Layout', 'Event Catalog', 'Package Builder', 'Responsive UI'],
     skillsHighlighted: [
       'Visual storytelling & luxury aesthetic',
@@ -136,7 +136,7 @@ export const projectsData: Project[] = [
     shortDescription: 'A property-focused digital experience designed to present real-estate services and help visitors discover relevant property opportunities.',
     fullDescription: 'The Property Agent is an authoritative Karnataka-wide real estate portal designed to help buyers and investors find plots, farmhouse land, agricultural acreage, rental homes, and commercial spaces with ease and confidence.',
     liveUrl: 'https://thepropertyagent.in/',
-    image: '/assets/projects/the-property-agent.png',
+    image: '/assets/projects/the-property-agent.webp',
     tags: ['Information Architecture', 'Real Estate UX', 'Modern Typography', 'Search UI', 'Accessible Layouts'],
     skillsHighlighted: [
       'Multi-category property hierarchy',
@@ -171,7 +171,7 @@ export const projectsData: Project[] = [
     shortDescription: 'A travel-focused website bringing transportation services and trip-related information together in an accessible, customer-friendly experience.',
     fullDescription: 'Taj Luxury Travel & Concierge provides executive transportation across India. Features a clean outstation rate calculator, transparent vehicle choice (Maruti Suzuki Ertiga 6+1 and Maruti Suzuki Dzire), and 24/7 ride booking for airport transfers and hourly city packages.',
     liveUrl: 'https://tours-and-travels-xi-six.vercel.app/',
-    image: '/assets/projects/taj-tours.png',
+    image: '/assets/projects/taj-tours.webp',
     tags: ['Travel UX', 'Rate Calculator', 'Fleet Showcase', 'Vercel Deployment', 'Fast Performance'],
     skillsHighlighted: [
       'Travel UX & rate calculation interface',

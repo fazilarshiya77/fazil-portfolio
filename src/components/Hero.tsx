@@ -262,7 +262,7 @@ export const Hero: React.FC = () => {
           <motion.a
             whileHover={{ y: -3, scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            href="https://www.linkedin.com/in/fazilarshiya"
+            href="https://www.instagram.com/fazilarshiya_"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2.5 transition-all group"
